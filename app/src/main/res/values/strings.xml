@@ -14,4 +14,9 @@
     <string name="userNameEmpty">Username can not be empty</string>
     <string name="userNameLength">Username must be between 6 and 12 characters</string>
     <string name="userNameSpecials">Username can not have specials characters</string>
+    <string name="emailEmpty">Email can not be empty</string>
+    <string name="emailFormat">Email wrong format</string>
+    <string name="passwordEmpty">Password can not be empty</string>
+    <string name="passwordLength">Password must be between 6 and 12 characters</string>
+    <string name="passwordNumber">Password must contains a number</string>
 </resources>
