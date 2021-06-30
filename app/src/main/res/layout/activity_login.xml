@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="275dp"
         android:layout_marginTop="40dp"
+        android:contentDescription="@string/logo"
         tools:src="@tools:sample/avatars" />
 
     <LinearLayout
@@ -33,7 +34,8 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
-            android:text="@string/username" />
+            android:text="@string/username"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/txtuserName"
@@ -63,7 +65,8 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
-            android:text="@string/password" />
+            android:text="@string/password"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/txtPassword"

@@ -4,5 +4,11 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="sign_up">Sign up</string>
+    <string name="logo">Logo</string>
     <string name="facebook">Facebook</string>
+    <string name="email">Email</string>
+    <string name="image">Image</string>
+    <string name="emailEx">example@example.com</string>
+    <string name="SelectImage">Select an image</string>
+    <string name="makePhoto">Take a picture</string>
 </resources>
