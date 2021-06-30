@@ -1,10 +1,13 @@
-package com.example.stelaris;
+package com.example.stelaris.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.stelaris.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -20,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void sigin(View view){
-
+        Intent i = new Intent(this, SignUpActivity.class);
+        startActivity(i);
     }
 }

@@ -11,4 +11,7 @@
     <string name="emailEx">example@example.com</string>
     <string name="SelectImage">Select an image</string>
     <string name="makePhoto">Take a picture</string>
+    <string name="userNameEmpty">Username can not be empty</string>
+    <string name="userNameLength">Username must be between 6 and 12 characters</string>
+    <string name="userNameSpecials">Username can not have specials characters</string>
 </resources>
