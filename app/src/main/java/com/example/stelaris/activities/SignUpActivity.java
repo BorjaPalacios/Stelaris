@@ -7,6 +7,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
+import com.example.stelaris.Usuario;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.parses.ParseSign;
 import com.google.android.material.snackbar.Snackbar;
@@ -28,6 +29,19 @@ public class SignUpActivity extends AppCompatActivity {
 
         this.password = findViewById(R.id.txtPasswordSign);
         this.password.setOnFocusChangeListener(listenerPassword());
+    }
+
+    public void registrar(View view) {
+        try {
+            if (ParseSign.parseUserName(this, this.username.getText().toString()) &&
+                    ParseSign.parsePassword(this, this.password.getText().toString()) &&
+                    ParseSign.parseEmail(this, this.email.getText().toString())) {
+                Usuario usuario = new Usuario(this.username.getText().toString(), this.password.getText().toString(),
+                        this.email.getText().toString());
+            }
+        } catch (StringException e) {
+            Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_SHORT).show();
+        }
     }
 
     private View.OnFocusChangeListener listenerUsername() {

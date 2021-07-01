@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class ParseSign {
 
-    public static void parseUserName(Context context, String username) throws StringException {
+    public static boolean parseUserName(Context context, String username) throws StringException {
 
         if (username == null || username.trim().isEmpty()) {
             throw new StringException(context.getString(R.string.userNameEmpty));
@@ -19,18 +19,22 @@ public class ParseSign {
         } else if (checkSpecialCharacter(username)) {
             throw new StringException(context.getString(R.string.userNameSpecials));
         }
+
+        return true;
     }
 
-    public static void parseEmail(Context context, String email) throws StringException {
+    public static boolean parseEmail(Context context, String email) throws StringException {
 
         if (email == null || email.trim().isEmpty()) {
             throw new StringException(context.getString(R.string.emailEmpty));
         } else if (!checkEmail(email)) {
             throw new StringException(context.getString(R.string.emailFormat));
         }
+
+        return true;
     }
 
-    public static void parsePassword(Context context, String password) throws StringException {
+    public static boolean parsePassword(Context context, String password) throws StringException {
 
         if (password == null || password.trim().isEmpty()) {
             throw new StringException(context.getString(R.string.passwordEmpty));
@@ -39,6 +43,8 @@ public class ParseSign {
         } else if (!checkNumbers(password)) {
             throw new StringException(context.getString(R.string.passwordNumber));
         }
+
+        return true;
     }
 
     private static boolean checkSpecialCharacter(String string) {
