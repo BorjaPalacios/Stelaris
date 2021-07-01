@@ -42,7 +42,7 @@ public class ParseSign {
     }
 
     private static boolean checkSpecialCharacter(String string) {
-//TODO hacer q el pattern funcione
+
         Pattern pattern = Pattern.compile("[A-Za-z0-9]");
         Matcher matcher = pattern.matcher(string);
 
