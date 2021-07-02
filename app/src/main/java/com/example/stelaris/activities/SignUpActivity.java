@@ -2,6 +2,7 @@ package com.example.stelaris.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -26,7 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText username, password, email;
     private ImageView image;
     private final int PICK_IMAGE = 100;
-    ActivityResultLauncher<Intent> imageActivityResultLauncher;
+    ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivittyResultLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +44,21 @@ public class SignUpActivity extends AppCompatActivity {
         this.password.setOnFocusChangeListener(listenerPassword());
 
         this.image = findViewById(R.id.imageView2);
-        imageActivityResultLauncher = helper();
+        imageActivityResultLauncher = imageHelper();
+        photoActivittyResultLauncher = photoHelper();
     }
 
     public void getImage(View view) {
 
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         imageActivityResultLauncher.launch(i);
+    }
+
+    public void getPhoto (View view){
+
+        Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        photoActivittyResultLauncher.launch(i);
+
     }
 
     public void registrar(View view) {
@@ -116,7 +125,7 @@ public class SignUpActivity extends AppCompatActivity {
         };
     }
 
-    private ActivityResultLauncher<Intent> helper() {
+    private ActivityResultLauncher<Intent> imageHelper() {
         return registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -127,6 +136,23 @@ public class SignUpActivity extends AppCompatActivity {
                             Intent data = result.getData();
                             Uri imageUri = data.getData();
                             image.setImageURI(imageUri);
+                        }
+                    }
+                });
+    }
+
+    private ActivityResultLauncher<Intent> photoHelper() {
+        return registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            // Here, no request code
+                            Intent data = result.getData();
+                            Bundle bundel = data.getExtras();
+                            Bitmap bitmap = (Bitmap) bundel.get("data");
+                            image.setImageBitmap(bitmap);
                         }
                     }
                 });
