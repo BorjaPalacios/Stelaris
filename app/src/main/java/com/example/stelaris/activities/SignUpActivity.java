@@ -1,5 +1,6 @@
 package com.example.stelaris.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,7 +9,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import androidx.annotation.Nullable;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
@@ -22,6 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText username, password, email;
     private ImageView image;
     private final int PICK_IMAGE = 100;
+    ActivityResultLauncher<Intent> imageActivityResultLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,21 +43,13 @@ public class SignUpActivity extends AppCompatActivity {
         this.password.setOnFocusChangeListener(listenerPassword());
 
         this.image = findViewById(R.id.imageView2);
+        imageActivityResultLauncher = helper();
     }
 
-    public void getImage(View view){
+    public void getImage(View view) {
+
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(i, PICK_IMAGE);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE){
-            Uri imageUri = data.getData();
-            this.image.setImageURI(imageUri);
-        }
+        imageActivityResultLauncher.launch(i);
     }
 
     public void registrar(View view) {
@@ -117,5 +114,21 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         };
+    }
+
+    private ActivityResultLauncher<Intent> helper() {
+        return registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            // Here, no request code
+                            Intent data = result.getData();
+                            Uri imageUri = data.getData();
+                            image.setImageURI(imageUri);
+                        }
+                    }
+                });
     }
 }
