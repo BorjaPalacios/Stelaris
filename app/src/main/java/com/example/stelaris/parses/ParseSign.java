@@ -49,7 +49,7 @@ public class ParseSign {
 
     private static boolean checkSpecialCharacter(String string) {
 
-        Pattern pattern = Pattern.compile("[A-Za-z0-9]");
+        Pattern pattern = Pattern.compile("[^A-Za-z0-9]");
         Matcher matcher = pattern.matcher(string);
 
         return matcher.find();

@@ -1,13 +1,17 @@
 package com.example.stelaris;
 
+import android.graphics.Bitmap;
+
 public class Usuario {
 
     private String username, password, email;
+    private Bitmap photo;
 
-    public Usuario(String username, String password, String email) {
+    public Usuario(String username, String password, String email, Bitmap photo) {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.photo = photo;
     }
 
     public String getUsername() {

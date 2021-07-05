@@ -21,13 +21,15 @@ import com.example.stelaris.Usuario;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.parses.ParseSign;
 import com.google.android.material.snackbar.Snackbar;
+import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
 
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText username, password, email;
-    private ImageView image;
-    private final int PICK_IMAGE = 100;
-    ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivittyResultLauncher;
+    private Bitmap image;
+    ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivityResultLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +45,8 @@ public class SignUpActivity extends AppCompatActivity {
         this.password = findViewById(R.id.txtPasswordSign);
         this.password.setOnFocusChangeListener(listenerPassword());
 
-        this.image = findViewById(R.id.imageView2);
         imageActivityResultLauncher = imageHelper();
-        photoActivittyResultLauncher = photoHelper();
+        photoActivityResultLauncher = photoHelper();
     }
 
     public void getImage(View view) {
@@ -57,7 +58,7 @@ public class SignUpActivity extends AppCompatActivity {
     public void getPhoto (View view){
 
         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        photoActivittyResultLauncher.launch(i);
+        photoActivityResultLauncher.launch(i);
 
     }
 
@@ -67,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
                     ParseSign.parsePassword(this, this.password.getText().toString()) &&
                     ParseSign.parseEmail(this, this.email.getText().toString())) {
                 Usuario usuario = new Usuario(this.username.getText().toString(), this.password.getText().toString(),
-                        this.email.getText().toString());
+                        this.email.getText().toString(), image);
             }
         } catch (StringException e) {
             Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_SHORT).show();
@@ -132,10 +133,13 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onActivityResult(ActivityResult result) {
                         if (result.getResultCode() == Activity.RESULT_OK) {
-                            // Here, no request code
                             Intent data = result.getData();
                             Uri imageUri = data.getData();
-                            image.setImageURI(imageUri);
+                            try {
+                                image = MediaStore.Images.Media.getBitmap(SignUpActivity.this.getContentResolver(), imageUri);
+                            } catch (IOException e) {
+                                Snackbar.make(SignUpActivity.this.getCurrentFocus(), e.getMessage(), Snackbar.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 });
@@ -151,8 +155,7 @@ public class SignUpActivity extends AppCompatActivity {
                             // Here, no request code
                             Intent data = result.getData();
                             Bundle bundel = data.getExtras();
-                            Bitmap bitmap = (Bitmap) bundel.get("data");
-                            image.setImageBitmap(bitmap);
+                            image = (Bitmap) bundel.get("data");
                         }
                     }
                 });
