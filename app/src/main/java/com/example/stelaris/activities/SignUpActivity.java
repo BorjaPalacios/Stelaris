@@ -1,7 +1,9 @@
 package com.example.stelaris.activities;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,12 +20,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
 import com.example.stelaris.Usuario;
+import com.example.stelaris.bbdd.BbddManager;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.parses.ParseSign;
 import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -64,11 +69,24 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void registrar(View view) {
         try {
+            BbddManager bbddManager = new BbddManager(this,"StelarisDb", null, 1);
+            SQLiteDatabase db = bbddManager.getWritableDatabase();
+
             if (ParseSign.parseUserName(this, this.username.getText().toString()) &&
                     ParseSign.parsePassword(this, this.password.getText().toString()) &&
                     ParseSign.parseEmail(this, this.email.getText().toString())) {
                 Usuario usuario = new Usuario(this.username.getText().toString(), this.password.getText().toString(),
                         this.email.getText().toString(), image);
+
+                ContentValues values = new ContentValues();
+                values.put("nombre", usuario.getUsername());
+                values.put("email", usuario.getEmail());
+
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                usuario.getPhoto().compress(Bitmap.CompressFormat.PNG, 0, outputStream);
+                values.put("photo", outputStream.toByteArray());
+
+                db.insert("Usuarios", null, values);
             }
         } catch (StringException e) {
             Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_SHORT).show();

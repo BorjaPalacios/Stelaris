@@ -74,9 +74,10 @@ public class ParseSign {
         boolean number = false;
 
         for (Character c : string.toCharArray()) {
-            if (Character.isDigit(c))
+            if (Character.isDigit(c)) {
                 number = true;
-            break;
+                break;
+            }
         }
 
         return number;
