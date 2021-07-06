@@ -19,4 +19,5 @@
     <string name="passwordEmpty">Password can not be empty</string>
     <string name="passwordLength">Password must be between 6 and 12 characters</string>
     <string name="passwordNumber">Password must contains a number</string>
+    <string name="Auction">Start auction</string>
 </resources>

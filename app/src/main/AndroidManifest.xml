@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Stelaris">
+        <activity android:name=".activities.HomeActivity"></activity>
         <activity
             android:name=".activities.SignUpActivity"
             android:windowSoftInputMode="adjustResize" />
@@ -20,4 +21,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

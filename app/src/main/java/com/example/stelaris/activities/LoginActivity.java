@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
 import com.example.stelaris.bbdd.BbddManager;
-import com.example.stelaris.utils.Security;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -31,6 +30,11 @@ public class LoginActivity extends AppCompatActivity {
 
     public void sigin(View view) {
         Intent i = new Intent(this, SignUpActivity.class);
+        startActivity(i);
+    }
+
+    public void login(View view) {
+        Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
     }
 }
