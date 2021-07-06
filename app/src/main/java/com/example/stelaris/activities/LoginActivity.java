@@ -1,19 +1,23 @@
 package com.example.stelaris.activities;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
 import com.example.stelaris.bbdd.BbddManager;
+import com.example.stelaris.utils.Security;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText username, password;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

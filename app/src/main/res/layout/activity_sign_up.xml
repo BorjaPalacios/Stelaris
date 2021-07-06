@@ -173,7 +173,10 @@
                 android:layout_marginEnd="130dp"
                 android:layout_marginRight="130dp"
                 android:onClick="registrar"
-                android:text="@string/sign_up" />
+                android:text="@string/sign_up"
+                android:textColor="#000000"
+                app:backgroundTint="#04D8F3"
+                app:cornerRadius="15dp" />
 
             <Button
                 android:id="@+id/btnFacebook2"
@@ -187,7 +190,10 @@
                 android:gravity="center"
                 android:paddingLeft="70dp"
                 android:paddingRight="70dp"
-                android:text="@string/facebook" />
+                android:text="@string/facebook"
+                android:textColor="#000000"
+                app:backgroundTint="#04D8F3"
+                app:cornerRadius="15dp" />
 
         </LinearLayout>
     </ScrollView>

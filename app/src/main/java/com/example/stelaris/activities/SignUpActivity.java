@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -24,11 +23,13 @@ import com.example.stelaris.bbdd.BbddManager;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.parses.ParseSign;
 import com.google.android.material.snackbar.Snackbar;
-import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
+import javax.crypto.NoSuchPaddingException;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -60,7 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
         imageActivityResultLauncher.launch(i);
     }
 
-    public void getPhoto (View view){
+    public void getPhoto(View view) {
 
         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         photoActivityResultLauncher.launch(i);
@@ -69,12 +70,15 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void registrar(View view) {
         try {
-            BbddManager bbddManager = new BbddManager(this,"StelarisDb", null, 1);
+            BbddManager bbddManager = new BbddManager(this, "StelarisDb", null, 1);
             SQLiteDatabase db = bbddManager.getWritableDatabase();
 
             if (ParseSign.parseUserName(this, this.username.getText().toString()) &&
                     ParseSign.parsePassword(this, this.password.getText().toString()) &&
                     ParseSign.parseEmail(this, this.email.getText().toString())) {
+
+
+
                 Usuario usuario = new Usuario(this.username.getText().toString(), this.password.getText().toString(),
                         this.email.getText().toString(), image);
 
