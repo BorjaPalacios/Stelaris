@@ -65,7 +65,7 @@
         android:id="@+id/btnSubasta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Auction"
+        android:text="@string/subasta"
         android:textColor="#000000"
         app:backgroundTint="#04F60E" />
 
