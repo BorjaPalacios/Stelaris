@@ -1,5 +1,6 @@
 package com.example.stelaris.activities;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.stelaris.ProfileActivity;
 import com.example.stelaris.R;
 
 public class HomeActivity extends AppCompatActivity {
@@ -52,23 +54,21 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
-        Toast toast = null;
 
         switch (item.getItemId()) {
             case R.id.menuPerfil:
-                toast = Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT);
+                Intent i = new Intent(this, ProfileActivity.class);
                 this.layout.setAlpha(0.2f);
+                startActivity(i);
                 break;
             case R.id.menuOpciones:
-                toast = Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT);
+                toast.show();
                 break;
             case R.id.menuCerrarSesion:
                 finish();
                 break;
         }
-
-        toast.show();
-
         return true;
     }
 }

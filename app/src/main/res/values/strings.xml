@@ -24,4 +24,6 @@
     <string name="ajustes">Settings</string>
     <string name="cerrarSesion">Close Session</string>
     <string name="base">Base Planet</string>
+    <string name="selectFavorites">---Select Favorites---</string>
+    <string name="save">Save</string>
 </resources>
