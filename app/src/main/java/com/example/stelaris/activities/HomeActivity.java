@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView celeste, descrpicion;
     private ImageView imagenNasa;
     private Button btnMenu;
+    private LinearLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         this.descrpicion = findViewById(R.id.lblDescripcion);
         this.imagenNasa = findViewById(R.id.imgNasa);
         this.btnMenu = findViewById(R.id.btnMenu);
+        this.layout = (LinearLayout) findViewById(R.id.home);
 
         registerForContextMenu(btnMenu);
         this.btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -54,12 +57,13 @@ public class HomeActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menuPerfil:
                 toast = Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT);
+                this.layout.setAlpha(0.2f);
                 break;
             case R.id.menuOpciones:
                 toast = Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT);
                 break;
             case R.id.menuCerrarSesion:
-                toast = Toast.makeText(this, "Cerrar Sesion", Toast.LENGTH_SHORT);
+                finish();
                 break;
         }
 
