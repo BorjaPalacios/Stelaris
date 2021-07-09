@@ -17,6 +17,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
+import com.example.stelaris.clases.Usuario;
 
 public class HomeActivity extends AppCompatActivity {
     //TODO Crear los botones para desplazarnos
@@ -26,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView imagenNasa;
     private Button btnMenu;
     private LinearLayout layout;
+    private Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class HomeActivity extends AppCompatActivity {
         this.imagenNasa = findViewById(R.id.imgNasa);
         this.btnMenu = findViewById(R.id.btnMenu);
         this.layout = (LinearLayout) findViewById(R.id.home);
+
+        this.usuario = (Usuario) getIntent().getSerializableExtra("Usuario");
 
         registerForContextMenu(btnMenu);
         this.btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menuPerfil:
                 Intent i = new Intent(this, ProfileActivity.class);
-                this.layout.setAlpha(0.2f);
+                i.putExtra("Usuario", usuario);
                 startActivity(i);
                 break;
             case R.id.menuOpciones:

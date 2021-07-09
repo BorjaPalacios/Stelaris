@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.stelaris.R;
+import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.parses.ParseSign;
 import com.google.android.material.snackbar.Snackbar;
@@ -28,6 +29,7 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText username, email;
     private Bitmap image;
     ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivityResultLauncher;
+    private Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         this.username = findViewById(R.id.txtProfileUserName);
         this.email = findViewById(R.id.txtProfileEmail);
+
+        this.usuario = (Usuario) getIntent().getSerializableExtra("Usuario");
     }
+
+
 
     private View.OnFocusChangeListener listenerUsername() {
 

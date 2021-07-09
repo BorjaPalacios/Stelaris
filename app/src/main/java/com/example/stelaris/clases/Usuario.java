@@ -2,9 +2,10 @@ package com.example.stelaris.clases;
 
 import android.graphics.Bitmap;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Usuario {
+public class Usuario implements Serializable {
 
     private String username, password, email;
     private Bitmap photo;
@@ -52,8 +53,8 @@ public class Usuario {
         this.photo = photo;
     }
 
-    public BasePlanet getPlanet() {
-        return planet;
+    public String getPlanet() {
+        return planet.toString();
     }
 
     public void setPlanet(BasePlanet planet) {

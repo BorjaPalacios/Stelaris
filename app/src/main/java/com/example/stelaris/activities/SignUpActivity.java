@@ -85,8 +85,13 @@ public class SignUpActivity extends AppCompatActivity {
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 usuario.getPhoto().compress(Bitmap.CompressFormat.PNG, 0, outputStream);
                 values.put("photo", outputStream.toByteArray());
+                values.put("planet", usuario.getPlanet());
 
                 db.insert("Usuarios", null, values);
+
+                Intent i = new Intent(this, HomeActivity.class);
+                i.putExtra("Usuario", usuario);
+                startActivity(i);
             }
         } catch (StringException e) {
             Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_SHORT).show();
