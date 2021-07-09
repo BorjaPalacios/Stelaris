@@ -1,18 +1,16 @@
 package com.example.stelaris.clases;
 
-import android.graphics.Bitmap;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Usuario implements Serializable {
 
     private String username, password, email;
-    private Bitmap photo;
+    private byte[] photo;
     private BasePlanet planet;
     private ArrayList<String> favoritos;
 
-    public Usuario(String username, String password, String email, Bitmap photo) {
+    public Usuario(String username, String password, String email, byte[] photo) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -45,11 +43,11 @@ public class Usuario implements Serializable {
         this.email = email;
     }
 
-    public Bitmap getPhoto() {
+    public byte[] getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Bitmap photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
 

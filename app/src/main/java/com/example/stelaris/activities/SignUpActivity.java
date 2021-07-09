@@ -31,7 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
     //TODO Registro en bbdd, comprobacion de q no existe
     //TODO Necesidad de boton facebook?
     private EditText username, password, email;
-    private Bitmap image;
+    private byte[] image;
     ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivityResultLauncher;
 
     @Override
@@ -82,9 +82,7 @@ public class SignUpActivity extends AppCompatActivity {
                 values.put("nombre", usuario.getUsername());
                 values.put("email", usuario.getEmail());
 
-                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                usuario.getPhoto().compress(Bitmap.CompressFormat.PNG, 0, outputStream);
-                values.put("photo", outputStream.toByteArray());
+                values.put("photo", usuario.getPhoto());
                 values.put("planet", usuario.getPlanet());
 
                 db.insert("Usuarios", null, values);
@@ -159,7 +157,11 @@ public class SignUpActivity extends AppCompatActivity {
                             Intent data = result.getData();
                             Uri imageUri = data.getData();
                             try {
-                                image = MediaStore.Images.Media.getBitmap(SignUpActivity.this.getContentResolver(), imageUri);
+                                Bitmap bitmap = MediaStore.Images.Media.getBitmap(SignUpActivity.this.getContentResolver(), imageUri);
+
+                                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                                bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                                image = outputStream.toByteArray();
                             } catch (IOException e) {
 
                             }
@@ -178,7 +180,11 @@ public class SignUpActivity extends AppCompatActivity {
                             // Here, no request code
                             Intent data = result.getData();
                             Bundle bundel = data.getExtras();
-                            image = (Bitmap) bundel.get("data");
+                            Bitmap bitmap = (Bitmap) bundel.get("data");
+
+                            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                            image = outputStream.toByteArray();
                         }
                     }
                 });
