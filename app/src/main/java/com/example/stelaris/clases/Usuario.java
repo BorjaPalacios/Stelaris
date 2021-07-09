@@ -1,17 +1,23 @@
-package com.example.stelaris;
+package com.example.stelaris.clases;
 
 import android.graphics.Bitmap;
+
+import java.util.ArrayList;
 
 public class Usuario {
 
     private String username, password, email;
     private Bitmap photo;
+    private BasePlanet planet;
+    private ArrayList<String> favoritos;
 
     public Usuario(String username, String password, String email, Bitmap photo) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.photo = photo;
+        this.planet = BasePlanet.tierra;
+        this.favoritos = new ArrayList<>();
     }
 
     public String getUsername() {
@@ -40,5 +46,25 @@ public class Usuario {
 
     public Bitmap getPhoto() {
         return photo;
+    }
+
+    public void setPhoto(Bitmap photo) {
+        this.photo = photo;
+    }
+
+    public BasePlanet getPlanet() {
+        return planet;
+    }
+
+    public void setPlanet(BasePlanet planet) {
+        this.planet = planet;
+    }
+
+    public ArrayList<String> getFavoritos() {
+        return favoritos;
+    }
+
+    public void setFavoritos(ArrayList<String> favoritos) {
+        this.favoritos = favoritos;
     }
 }

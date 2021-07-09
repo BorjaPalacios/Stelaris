@@ -18,7 +18,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
-import com.example.stelaris.Usuario;
+import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.bbdd.BbddManager;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.parses.ParseSign;
@@ -26,13 +26,10 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-
-import javax.crypto.NoSuchPaddingException;
 
 public class SignUpActivity extends AppCompatActivity {
-
+    //TODO Registro en bbdd, comprobacion de q no existe
+    //TODO Necesidad de boton facebook?
     private EditText username, password, email;
     private Bitmap image;
     ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivityResultLauncher;
@@ -76,7 +73,6 @@ public class SignUpActivity extends AppCompatActivity {
             if (ParseSign.parseUserName(this, this.username.getText().toString()) &&
                     ParseSign.parsePassword(this, this.password.getText().toString()) &&
                     ParseSign.parseEmail(this, this.email.getText().toString())) {
-
 
 
                 Usuario usuario = new Usuario(this.username.getText().toString(), this.password.getText().toString(),
@@ -148,7 +144,7 @@ public class SignUpActivity extends AppCompatActivity {
         };
     }
 
-    private ActivityResultLauncher<Intent> imageHelper() {
+    public ActivityResultLauncher<Intent> imageHelper() {
         return registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -160,14 +156,14 @@ public class SignUpActivity extends AppCompatActivity {
                             try {
                                 image = MediaStore.Images.Media.getBitmap(SignUpActivity.this.getContentResolver(), imageUri);
                             } catch (IOException e) {
-                                Snackbar.make(SignUpActivity.this.getCurrentFocus(), e.getMessage(), Snackbar.LENGTH_SHORT).show();
+
                             }
                         }
                     }
                 });
     }
 
-    private ActivityResultLauncher<Intent> photoHelper() {
+    public ActivityResultLauncher<Intent> photoHelper() {
         return registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {

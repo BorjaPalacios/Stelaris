@@ -16,11 +16,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.stelaris.ProfileActivity;
 import com.example.stelaris.R;
 
 public class HomeActivity extends AppCompatActivity {
-
+    //TODO Crear los botones para desplazarnos
+    //TODO Conexion con la api de la nasa
+    //TODO Foto de default
     private TextView celeste, descrpicion;
     private ImageView imagenNasa;
     private Button btnMenu;

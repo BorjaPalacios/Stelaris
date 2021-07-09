@@ -13,7 +13,8 @@ import com.example.stelaris.R;
 import com.example.stelaris.bbdd.BbddManager;
 
 public class LoginActivity extends AppCompatActivity {
-
+    //TODO Facebook
+    //TODO Comparacion base de datos
     private EditText username, password;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
