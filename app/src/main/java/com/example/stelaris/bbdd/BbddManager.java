@@ -9,6 +9,7 @@ public class BbddManager extends SQLiteOpenHelper {
     String sqlCreate = "CREATE TABLE IF NOT EXISTS Usuarios (usuario_id INTEGER PRIMARY KEY," +
             " nombre TEXT NOT NULL," +
             " email TEXT NOT NULL," +
+            " planet TEXT NOT NULL," +
             " photo BLOB NOT NULL)";
 
     public BbddManager(Context contexto, String nombre, SQLiteDatabase.CursorFactory factory, int version) {

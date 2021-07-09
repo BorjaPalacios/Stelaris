@@ -7,6 +7,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -16,14 +17,17 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.example.stelaris.R;
 import com.example.stelaris.bbdd.BbddManager;
+import com.example.stelaris.clases.BasePlanet;
 import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.parses.ParseSign;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -36,6 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
     private CircleImageView profileImage;
     ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivityResultLauncher;
     private Usuario usuario;
+    private Spinner basePlanetSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +59,26 @@ public class ProfileActivity extends AppCompatActivity {
 
         this.profileImage = (CircleImageView) findViewById(R.id.profile_image);
         image = BitmapFactory.decodeByteArray(this.usuario.getPhoto(), 0, this.usuario.getPhoto().length);
+        this.profileImage.setImageBitmap(image);
+
+        this.basePlanetSpinner = findViewById(R.id.spBasePlanet);
     }
 
     public void salvar(View view) throws StringException {
 
-            BbddManager bbddManager = new BbddManager(this, "StelarisDb", null, 1);
-            SQLiteDatabase db = bbddManager.getWritableDatabase();
+        BbddManager bbddManager = new BbddManager(this, "StelarisDb", null, 1);
+        SQLiteDatabase db = bbddManager.getWritableDatabase();
 
+        ContentValues values = new ContentValues();
+        values.put("nombre", this.username.getText().toString());
+        values.put("email", this.email.getText().toString());
+        values.put("planet", ((BasePlanet)this.basePlanetSpinner.getSelectedItem()).toString());
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+        values.put("photo", outputStream.toByteArray());
+
+        //db.update("Usuarios", values, );
 
 
     }
@@ -75,7 +93,7 @@ public class ProfileActivity extends AppCompatActivity {
                         ParseSign.parseUserName(v.getContext(), username.getText().toString());
                     } catch (StringException e) {
                         Snackbar.make(v, e.getMessage(), Snackbar.LENGTH_SHORT).show();
-                        username.setText("");
+                        username.setText(usuario.getUsername());
                     }
                 }
             }
@@ -92,7 +110,7 @@ public class ProfileActivity extends AppCompatActivity {
                         ParseSign.parseEmail(v.getContext(), email.getText().toString());
                     } catch (StringException e) {
                         Snackbar.make(v, e.getMessage(), Snackbar.LENGTH_SHORT).show();
-                        email.setText("");
+                        email.setText(usuario.getEmail());
                     }
                 }
             }

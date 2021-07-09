@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Usuario implements Serializable {
 
+    private int id;
     private String username, password, email;
     private byte[] photo;
     private BasePlanet planet;
@@ -17,6 +18,14 @@ public class Usuario implements Serializable {
         this.photo = photo;
         this.planet = BasePlanet.tierra;
         this.favoritos = new ArrayList<>();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
