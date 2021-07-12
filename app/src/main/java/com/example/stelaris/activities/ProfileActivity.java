@@ -34,7 +34,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
     //TODO Guardado en la bbdd
-    //TODO Favoritos en funcion del spinner
+    //TODO Favoritos en funcion del spinner(ajustes activity)
+    //TODO Mover basplanet a qjustes
+    //TODO revisar la circle image
     private EditText username, email;
     private Bitmap image;
     private CircleImageView profileImage;

@@ -23,6 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     //TODO Crear los botones para desplazarnos
     //TODO Conexion con la api de la nasa
     //TODO Foto de default
+    //TODO crear activity de ajustes
     private TextView celeste, descrpicion;
     private ImageView imagenNasa;
     private Button btnMenu;
