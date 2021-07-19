@@ -26,4 +26,6 @@
     <string name="base">Base Planet</string>
     <string name="selectFavorites">---Select Favorites---</string>
     <string name="save">Save</string>
+    <string name="userNameExists">Username already exits</string>
+    <string name="emailExists">Email already in use</string>
 </resources>

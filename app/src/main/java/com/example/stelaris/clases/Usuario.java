@@ -11,6 +11,9 @@ public class Usuario implements Serializable {
     private BasePlanet planet;
     private ArrayList<String> favoritos;
 
+    public Usuario() {
+    }
+
     public Usuario(String username, String password, String email, byte[] photo) {
         this.username = username;
         this.password = password;
