@@ -28,4 +28,5 @@
     <string name="save">Save</string>
     <string name="userNameExists">Username already exits</string>
     <string name="emailExists">Email already in use</string>
+    <string name="userCreate">User create</string>
 </resources>

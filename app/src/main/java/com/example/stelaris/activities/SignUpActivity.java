@@ -1,5 +1,6 @@
 package com.example.stelaris.activities;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -18,6 +20,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
@@ -29,11 +32,20 @@ import com.example.stelaris.exceptions.UsuarioException;
 import com.example.stelaris.parses.ParseSign;
 import com.google.android.material.snackbar.Snackbar;
 
+import org.apache.commons.codec.binary.Base64;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -41,6 +53,7 @@ public class SignUpActivity extends AppCompatActivity {
     //TODO Necesidad de boton facebook?
     private EditText username, password, email;
     private byte[] image;
+    private boolean ready = false;
     private LinearLayout layout;
     ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivityResultLauncher;
 
@@ -79,12 +92,19 @@ public class SignUpActivity extends AppCompatActivity {
     public void registrar(View view) {
         try {
             String url = "https://stelariswebapi.azurewebsites.net/usuario";
-            new getUsuarios().execute(url);
-        } catch (Exception ignored) {
 
+            if (ParseSign.parseUserName(this, this.username.getText().toString()) &&
+                    ParseSign.parsePassword(this, this.password.getText().toString()) &&
+                    ParseSign.parseEmail(this, this.email.getText().toString())) {
+
+                new getUsuarios().execute(url);
+            }
+        } catch (StringException e) {
+            Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_SHORT).show();
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class getUsuarios extends AsyncTask<String, Void, String> {
 
         @Override
@@ -106,6 +126,10 @@ public class SignUpActivity extends AppCompatActivity {
                         throw new UsuarioException(getString(R.string.emailExists), "email");
                 }
 
+                String url = "https://stelariswebapi.azurewebsites.net/usuario";
+
+                new postUsuario().execute(url);
+
             } catch (UsuarioException e) {
                 if(e.camp.equalsIgnoreCase("username")){
                     username.setText("");
@@ -119,34 +143,41 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
-    public void registrar(View view) {
-        try {
-            BbddManager bbddManager = new BbddManager(this, "StelarisDb", null, 1);
-            SQLiteDatabase db = bbddManager.getWritableDatabase();
+    private class postUsuario extends AsyncTask<String, Void, String> {
+        @RequiresApi(api = Build.VERSION_CODES.O)
+        @Override
+        protected String doInBackground(String... urls) {
 
-            if (ParseSign.parseUserName(this, this.username.getText().toString()) &&
-                    ParseSign.parsePassword(this, this.password.getText().toString()) &&
-                    ParseSign.parseEmail(this, this.email.getText().toString())) {
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpPost httppost = new HttpPost(urls[0]);
 
+            try {
+                List<NameValuePair> nameValuePairs = new ArrayList<>(5);
+                nameValuePairs.add(new BasicNameValuePair("username", username.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("email", email.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("password", password.getText().toString()));
+                String encodedphoto = java.util.Base64.getEncoder().encodeToString(image);
+                nameValuePairs.add(new BasicNameValuePair("photo", encodedphoto));
+                nameValuePairs.add(new BasicNameValuePair("planet", "tierra"));
 
-                Usuario usuario = new Usuario(this.username.getText().toString(), this.password.getText().toString(),
-                        this.email.getText().toString(), image);
+                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+                HttpResponse response = httpclient.execute(httppost);
 
-                ContentValues values = new ContentValues();
-                values.put("nombre", usuario.getUsername());
-                values.put("email", usuario.getEmail());
-
-                values.put("photo", usuario.getPhoto());
-                values.put("planet", usuario.getPlanet());
-
-                db.insert("Usuarios", null, values);
-
-                Intent i = new Intent(this, HomeActivity.class);
-                i.putExtra("Usuario", usuario);
-                startActivity(i);
+                return response.getStatusLine().getReasonPhrase();
+            } catch (IOException e) {
+                return "error";
             }
-        } catch (StringException e) {
-            Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            System.out.println(result);
+            Snackbar.make(layout, getString(R.string.userCreate), Snackbar.LENGTH_SHORT).show();
+
+
+            Intent i = new Intent(getBaseContext(), HomeActivity.class);
+            i.putExtra("username", username.getText().toString());
+            startActivity(i);
         }
     }
 
