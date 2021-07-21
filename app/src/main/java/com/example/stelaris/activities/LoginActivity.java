@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     public void sigin(View view) {
         Intent i = new Intent(this, SignUpActivity.class);
         startActivity(i);
+        finish();
     }
 
     public void login(View view) {
@@ -55,7 +56,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private class getUsuarios extends AsyncTask<String, Void, String> {
 
-        boolean encontrado = false;
+        private boolean encontrado = false;
+        private int idUsuario = 0;
 
         @Override
         protected String doInBackground(String... urls) {
@@ -66,19 +68,20 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             try {
                 JSONArray jsonarray = new JSONArray(result);
-                List<Usuario> lista = Usuarios.convertirJsonUsuario(jsonarray);
+                List<Usuario> lista = Usuarios.convertirJsonUsuarios(jsonarray);
 
                 for (Usuario u : lista) {
                     if (u.getUsername().equalsIgnoreCase(username.getText().toString())) {
                         if (Security.desencriptar(u.getPassword()).equals(password.getText().toString())){
                             encontrado = true;
+                            idUsuario = u.getId();
                         }
                     }
                 }
 
                 if(encontrado){
                     Intent i = new Intent(getBaseContext(), HomeActivity.class);
-                    i.putExtra("username", username.getText().toString());
+                    i.putExtra("idUsuario", idUsuario);
                     startActivity(i);
                 } else{
                     Snackbar.make(layout, getString(R.string.userNotFound), Snackbar.LENGTH_SHORT).show();

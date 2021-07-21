@@ -59,7 +59,7 @@ public class ProfileActivity extends AppCompatActivity {
         this.email.setOnFocusChangeListener(listenerEmail());
         this.email.setText(this.usuario.getEmail());
 
-        this.profileImage = (CircleImageView) findViewById(R.id.profile_image);
+        this.profileImage = findViewById(R.id.profile_image);
         image = BitmapFactory.decodeByteArray(this.usuario.getPhoto(), 0, this.usuario.getPhoto().length);
         this.profileImage.setImageBitmap(image);
 

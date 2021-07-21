@@ -28,6 +28,7 @@ import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.exceptions.UsuarioException;
 import com.example.stelaris.parses.ParseSign;
 import com.example.stelaris.utils.Security;
+import com.example.stelaris.utils.Utils;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.apache.http.HttpResponse;
@@ -47,6 +48,7 @@ import java.util.List;
 
 public class SignUpActivity extends AppCompatActivity {
     //TODO Necesidad de boton facebook?
+    //TODO Arreglar los permisos de la camara
     private EditText username, password, email;
     private byte[] image;
     private boolean ready = false;
@@ -94,6 +96,7 @@ public class SignUpActivity extends AppCompatActivity {
                     ParseSign.parseEmail(this, this.email.getText().toString())) {
 
                 getCurrentFocus().clearFocus();
+                Snackbar.make(layout, getString(R.string.paciencia), Snackbar.LENGTH_LONG).show();
                 new getUsuarios().execute(url);
             }
         } catch (StringException e) {
@@ -112,7 +115,7 @@ public class SignUpActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             try {
                 JSONArray jsonarray = new JSONArray(result);
-                List<Usuario> lista = Usuarios.convertirJsonUsuario(jsonarray);
+                List<Usuario> lista = Usuarios.convertirJsonUsuarios(jsonarray);
 
                 for (Usuario u : lista) {
                     if (u.getUsername().equalsIgnoreCase(username.getText().toString()))
@@ -165,11 +168,8 @@ public class SignUpActivity extends AppCompatActivity {
 
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
-                Snackbar.make(layout, getString(R.string.paciencia), Snackbar.LENGTH_LONG).show();
-
                 HttpResponse response = httpclient.execute(httppost);
-
-                return response.getStatusLine().getReasonPhrase();
+                return Utils.convertirInputToString(response.getEntity().getContent());
             } catch (IOException e) {
                 return "error";
             }
@@ -177,13 +177,13 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            System.out.println(result);
             Snackbar.make(layout, getString(R.string.userCreate), Snackbar.LENGTH_SHORT).show();
 
 
             Intent i = new Intent(getBaseContext(), HomeActivity.class);
-            i.putExtra("username", username.getText().toString());
+            i.putExtra("idUsuario", Integer.parseInt(result));
             startActivity(i);
+            finish();
         }
     }
 

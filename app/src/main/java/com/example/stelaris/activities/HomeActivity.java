@@ -1,6 +1,8 @@
 package com.example.stelaris.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -17,7 +19,11 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
+import com.example.stelaris.bbdd.Usuarios;
 import com.example.stelaris.clases.Usuario;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class HomeActivity extends AppCompatActivity {
     //TODO Crear los botones para desplazarnos
@@ -39,9 +45,9 @@ public class HomeActivity extends AppCompatActivity {
         this.descrpicion = findViewById(R.id.lblDescripcion);
         this.imagenNasa = findViewById(R.id.imgNasa);
         this.btnMenu = findViewById(R.id.btnMenu);
-        this.layout = (LinearLayout) findViewById(R.id.home);
+        this.layout = findViewById(R.id.home);
 
-        this.usuario = (Usuario) getIntent().getSerializableExtra("Usuario");
+        conseguirUsuario(getIntent().getExtras().getInt("idUsuario"));
 
         registerForContextMenu(btnMenu);
         this.btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +57,36 @@ public class HomeActivity extends AppCompatActivity {
                 v.showContextMenu(1000, 0);
             }
         });
+    }
+
+    private void conseguirUsuario(int userId) {
+        try {
+            String url = "https://stelariswebapi.azurewebsites.net/usuario/" + userId;
+            new getUsuario().execute(url);
+        } catch (Exception ignored) {
+
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    private class getUsuario extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... urls) {
+            return Usuarios.recuperarContenido(urls[0]);
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.O)
+        protected void onPostExecute(String result) {
+            try {
+                if (result != null) {
+                    JSONObject jsonObject = new JSONObject(result);
+                    usuario = Usuarios.convertirJsonUsuario(jsonObject);
+                }
+            } catch (JSONException ignored) {
+
+            }
+        }
     }
 
     @Override

@@ -1,5 +1,9 @@
 package com.example.stelaris.bbdd;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.utils.Utils;
 
@@ -10,14 +14,17 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 public class Usuarios {
 
-    public static List<Usuario> convertirJsonUsuario(JSONArray jsonarray) throws JSONException {
+    public static List<Usuario> convertirJsonUsuarios(JSONArray jsonarray) throws JSONException {
 
         List<Usuario> lista = new ArrayList<>();
 
@@ -39,6 +46,20 @@ public class Usuarios {
             lista.add(usuario);
         }
         return lista;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static Usuario convertirJsonUsuario(JSONObject jsonObject) throws JSONException {
+
+        Usuario usuario = new Usuario();
+
+        usuario.setId(jsonObject.optInt("idUsuario"));
+        usuario.setUsername(jsonObject.optString("username"));
+        usuario.setEmail(jsonObject.optString("email"));
+        if(jsonObject.optString("photo") != null)
+            usuario.setPhoto(Base64.getDecoder().decode(jsonObject.optString("photo")));
+
+        return usuario;
     }
 
     public static String recuperarContenido(String url) {
