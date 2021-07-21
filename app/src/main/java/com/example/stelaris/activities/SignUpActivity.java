@@ -113,8 +113,6 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(String result) {
-            Toast.makeText(getBaseContext(), "Datos recibidos!", Toast.LENGTH_LONG).show();
-
             try {
                 JSONArray jsonarray = new JSONArray(result);
                 List<Usuario> lista = Usuarios.convertirJsonUsuario(jsonarray);
@@ -156,8 +154,10 @@ public class SignUpActivity extends AppCompatActivity {
                 nameValuePairs.add(new BasicNameValuePair("username", username.getText().toString()));
                 nameValuePairs.add(new BasicNameValuePair("email", email.getText().toString()));
                 nameValuePairs.add(new BasicNameValuePair("password", password.getText().toString()));
-                String encodedphoto = java.util.Base64.getEncoder().encodeToString(image);
-                nameValuePairs.add(new BasicNameValuePair("photo", encodedphoto));
+                if(image != null) {
+                    String encodedphoto = java.util.Base64.getEncoder().encodeToString(image);
+                    nameValuePairs.add(new BasicNameValuePair("photo", encodedphoto));
+                }
                 nameValuePairs.add(new BasicNameValuePair("planet", "tierra"));
 
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
