@@ -46,7 +46,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignUpActivity extends AppCompatActivity {
-    //TODO Registro en bbdd, comprobacion de q no existe
     //TODO Necesidad de boton facebook?
     private EditText username, password, email;
     private byte[] image;
