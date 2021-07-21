@@ -2,10 +2,9 @@ package com.example.stelaris.activities;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -14,7 +13,6 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -24,15 +22,14 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
-import com.example.stelaris.bbdd.BbddManager;
 import com.example.stelaris.bbdd.Usuarios;
 import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.exceptions.UsuarioException;
 import com.example.stelaris.parses.ParseSign;
+import com.example.stelaris.utils.Security;
 import com.google.android.material.snackbar.Snackbar;
 
-import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -97,6 +94,7 @@ public class SignUpActivity extends AppCompatActivity {
                     ParseSign.parsePassword(this, this.password.getText().toString()) &&
                     ParseSign.parseEmail(this, this.email.getText().toString())) {
 
+                getCurrentFocus().clearFocus();
                 new getUsuarios().execute(url);
             }
         } catch (StringException e) {
@@ -129,9 +127,9 @@ public class SignUpActivity extends AppCompatActivity {
                 new postUsuario().execute(url);
 
             } catch (UsuarioException e) {
-                if(e.camp.equalsIgnoreCase("username")){
+                if (e.camp.equalsIgnoreCase("username")) {
                     username.setText("");
-                } else if(e.camp.equalsIgnoreCase("email")){
+                } else if (e.camp.equalsIgnoreCase("email")) {
                     email.setText("");
                 }
                 Snackbar.make(layout, e.getMessage(), Snackbar.LENGTH_SHORT).show();
@@ -153,14 +151,23 @@ public class SignUpActivity extends AppCompatActivity {
                 List<NameValuePair> nameValuePairs = new ArrayList<>(5);
                 nameValuePairs.add(new BasicNameValuePair("username", username.getText().toString()));
                 nameValuePairs.add(new BasicNameValuePair("email", email.getText().toString()));
-                nameValuePairs.add(new BasicNameValuePair("password", password.getText().toString()));
-                if(image != null) {
-                    String encodedphoto = java.util.Base64.getEncoder().encodeToString(image);
-                    nameValuePairs.add(new BasicNameValuePair("photo", encodedphoto));
+                nameValuePairs.add(new BasicNameValuePair("password", Security.encriptar(password.getText().toString())));
+
+                if (image == null) {
+                    Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.fotodefault);
+                    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                    image = outputStream.toByteArray();
                 }
+                String encodedphoto = java.util.Base64.getEncoder().encodeToString(image);
+                nameValuePairs.add(new BasicNameValuePair("photo", encodedphoto));
+
                 nameValuePairs.add(new BasicNameValuePair("planet", "tierra"));
 
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                Snackbar.make(layout, getString(R.string.paciencia), Snackbar.LENGTH_LONG).show();
+
                 HttpResponse response = httpclient.execute(httppost);
 
                 return response.getStatusLine().getReasonPhrase();

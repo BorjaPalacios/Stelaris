@@ -29,4 +29,5 @@
     <string name="userNameExists">Username already exits</string>
     <string name="emailExists">Email already in use</string>
     <string name="userCreate">User create</string>
+    <string name="paciencia">This may take a few seconds, please be patient</string>
 </resources>
