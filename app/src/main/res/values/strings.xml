@@ -31,4 +31,5 @@
     <string name="userCreate">User create</string>
     <string name="paciencia">This may take a few seconds, please be patient</string>
     <string name="userNotFound">User or password incorrect, please try again</string>
+    <string name="guardando">Saving changes …</string>
 </resources>

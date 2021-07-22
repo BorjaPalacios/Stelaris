@@ -51,10 +51,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignUpActivity extends AppCompatActivity {
-    //TODO Necesidad de boton facebook?
     private EditText username, password, email;
     private byte[] image;
-    private boolean ready = false;
     private LinearLayout layout;
     ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivityResultLauncher;
 

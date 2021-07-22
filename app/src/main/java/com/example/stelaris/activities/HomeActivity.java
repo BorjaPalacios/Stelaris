@@ -101,6 +101,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent i = new Intent(this, ProfileActivity.class);
                 i.putExtra("Usuario", usuario);
                 startActivity(i);
+                conseguirUsuario(usuario.getId());
                 break;
             case R.id.menuOpciones:
                 Toast toast = Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT);

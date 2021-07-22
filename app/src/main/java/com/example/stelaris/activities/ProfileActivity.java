@@ -1,48 +1,59 @@
 package com.example.stelaris.activities;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.provider.MediaStore;
+import android.view.View;
+import android.widget.EditText;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.content.ContentValues;
-import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Spinner;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.stelaris.R;
-import com.example.stelaris.bbdd.BbddManager;
-import com.example.stelaris.clases.BasePlanet;
 import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.parses.ParseSign;
 import com.google.android.material.snackbar.Snackbar;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
-    //TODO Guardado en la bbdd
     //TODO Favoritos en funcion del spinner(ajustes activity)
     //TODO Mover basplanet a qjustes
-    //TODO revisar la circle image?
     private EditText username, email;
-    private Bitmap image;
+    private byte[] image;
     private CircleImageView profileImage;
-    ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivityResultLauncher;
+    ActivityResultLauncher<Intent> imageActivityResultLauncherP, photoActivityResultLauncherP;
     private Usuario usuario;
-    private Spinner basePlanetSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,29 +71,67 @@ public class ProfileActivity extends AppCompatActivity {
         this.email.setText(this.usuario.getEmail());
 
         this.profileImage = findViewById(R.id.profile_image);
-        image = BitmapFactory.decodeByteArray(this.usuario.getPhoto(), 0, this.usuario.getPhoto().length);
-        this.profileImage.setImageBitmap(image);
+        this.profileImage.setImageBitmap(BitmapFactory.decodeByteArray(this.usuario.getPhoto(), 0,
+                this.usuario.getPhoto().length));
 
-        this.basePlanetSpinner = findViewById(R.id.spBasePlanet);
+        imageActivityResultLauncherP = imageHelper();
+        photoActivityResultLauncherP = photoHelper();
     }
 
     public void salvar(View view) throws StringException {
+        String url = "https://stelariswebapi.azurewebsites.net/usuario/" + usuario.getId();
+        new putUsuario().execute(url);
+        Snackbar.make(view, getString(R.string.guardando), Snackbar.LENGTH_LONG).show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                finish();
+            }
+        }, 5000);
+    }
 
-        BbddManager bbddManager = new BbddManager(this, "StelarisDb", null, 1);
-        SQLiteDatabase db = bbddManager.getWritableDatabase();
+    private class putUsuario extends AsyncTask<String, Void, String> {
 
-        ContentValues values = new ContentValues();
-        values.put("nombre", this.username.getText().toString());
-        values.put("email", this.email.getText().toString());
-        values.put("planet", ((BasePlanet)this.basePlanetSpinner.getSelectedItem()).toString());
+        @RequiresApi(api = Build.VERSION_CODES.O)
+        @Override
+        protected String doInBackground(String... urls) {
+            try {
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpPut httpPut = new HttpPut(urls[0]);
 
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        image.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
-        values.put("photo", outputStream.toByteArray());
+                List<NameValuePair> nameValuePairs = new ArrayList<>(3);
+                nameValuePairs.add(new BasicNameValuePair("username", username.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("email", email.getText().toString()));
 
-        //db.update("Usuarios", values, );
+                String encodedphoto = java.util.Base64.getEncoder().encodeToString(image);
+                nameValuePairs.add(new BasicNameValuePair("photo", encodedphoto));
 
+                httpPut.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
+                HttpResponse response = httpclient.execute(httpPut);
+
+                return "";
+            } catch (Exception ignored) {
+                return "error";
+            }
+        }
+    }
+
+    public void getImageP(View view) {
+
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        imageActivityResultLauncherP.launch(i);
+    }
+
+    public void getPhotoP(View view) throws InterruptedException {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) !=
+                PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
+        } else {
+            Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            photoActivityResultLauncherP.launch(i);
+        }
     }
 
     private View.OnFocusChangeListener listenerUsername() {
@@ -129,7 +178,10 @@ public class ProfileActivity extends AppCompatActivity {
                             Intent data = result.getData();
                             Uri imageUri = data.getData();
                             try {
-                                image = MediaStore.Images.Media.getBitmap(ProfileActivity.this.getContentResolver(), imageUri);
+                                Bitmap bitmap = MediaStore.Images.Media.getBitmap(ProfileActivity.this.getContentResolver(), imageUri);
+                                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                                bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                                image = outputStream.toByteArray();
                             } catch (IOException e) {
 
                             }
@@ -148,7 +200,11 @@ public class ProfileActivity extends AppCompatActivity {
                             // Here, no request code
                             Intent data = result.getData();
                             Bundle bundel = data.getExtras();
-                            image = (Bitmap) bundel.get("data");
+                            Bitmap bitmap = (Bitmap) bundel.get("data");
+
+                            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                            image = outputStream.toByteArray();
                         }
                     }
                 });
