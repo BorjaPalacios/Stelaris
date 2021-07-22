@@ -1,8 +1,10 @@
 package com.example.stelaris.activities;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -20,6 +22,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.stelaris.R;
 import com.example.stelaris.bbdd.Usuarios;
@@ -48,7 +52,6 @@ import java.util.List;
 
 public class SignUpActivity extends AppCompatActivity {
     //TODO Necesidad de boton facebook?
-    //TODO Arreglar los permisos de la camara
     private EditText username, password, email;
     private byte[] image;
     private boolean ready = false;
@@ -80,11 +83,15 @@ public class SignUpActivity extends AppCompatActivity {
         imageActivityResultLauncher.launch(i);
     }
 
-    public void getPhoto(View view) {
+    public void getPhoto(View view) throws InterruptedException {
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) !=
+                PackageManager.PERMISSION_GRANTED){
 
-        Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        photoActivityResultLauncher.launch(i);
-
+            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA}, 1);
+        } else {
+            Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            photoActivityResultLauncher.launch(i);
+        }
     }
 
     public void registrar(View view) {
