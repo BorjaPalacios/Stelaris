@@ -17,16 +17,22 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.stelaris.R;
 import com.example.stelaris.bbdd.Usuarios;
 import com.example.stelaris.clases.BasePlanet;
 import com.example.stelaris.clases.Usuario;
+import com.example.stelaris.clases.carousel.CarouselAdapter;
+import com.example.stelaris.clases.carousel.CarouselItem;
 import com.example.stelaris.utils.Utils;
+import com.google.android.material.tabs.TabLayout;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
@@ -37,6 +43,9 @@ public class HomeActivity extends AppCompatActivity {
     //https://www.geeksforgeeks.org/image-slider-in-android-using-viewpager/
     private TextView celeste, descrpicion;
     private ImageView imagenNasa;
+    private List<CarouselItem> listItems;
+    private ViewPager page;
+    private TabLayout tabLayout;
     private Button btnMenu;
     private LinearLayout layout;
     private Usuario usuario;
@@ -51,9 +60,11 @@ public class HomeActivity extends AppCompatActivity {
 
         this.celeste = findViewById(R.id.lblCeleste);
         this.descrpicion = findViewById(R.id.lblDescripcion);
-        this.imagenNasa = findViewById(R.id.imgNasa);
+        //this.imagenNasa = findViewById(R.id.imgNasa);
         this.btnMenu = findViewById(R.id.btnMenu);
         this.layout = findViewById(R.id.home);
+        this.page = findViewById(R.id.my_pager) ;
+        this.tabLayout = findViewById(R.id.my_tablayout);
 
         idUsuario = getIntent().getExtras().getInt("idUsuario");
         planet = (BasePlanet) getIntent().getExtras().getSerializable("location");
@@ -105,6 +116,13 @@ public class HomeActivity extends AppCompatActivity {
                 if (result != null) {
                     JSONObject jsonObject = new JSONObject(result);
                     List<String> images = com.example.stelaris.bbdd.Nasa.convertirJsonNasa(jsonObject);
+                    List<CarouselItem> carouselItemList = new ArrayList<>();
+                    for(String image : images){
+                        carouselItemList.add(new CarouselItem(image));
+                    }
+                    CarouselAdapter carouselAdapter = new CarouselAdapter(getBaseContext(), carouselItemList);
+                    page.setAdapter(carouselAdapter);
+                    tabLayout.setupWithViewPager(page,true);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
