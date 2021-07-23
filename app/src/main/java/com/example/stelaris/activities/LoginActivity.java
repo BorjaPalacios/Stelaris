@@ -14,8 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.stelaris.R;
 import com.example.stelaris.bbdd.BbddManager;
 import com.example.stelaris.bbdd.Usuarios;
+import com.example.stelaris.clases.BasePlanet;
 import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.utils.Security;
+import com.example.stelaris.utils.Utils;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
@@ -25,6 +27,7 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     //TODO Facebook
+    //TODO perder focus
     private EditText username, password;
     private LinearLayout layout;
 
@@ -58,10 +61,11 @@ public class LoginActivity extends AppCompatActivity {
 
         private boolean encontrado = false;
         private int idUsuario = 0;
+        private BasePlanet location;
 
         @Override
         protected String doInBackground(String... urls) {
-            return Usuarios.recuperarContenido(urls[0]);
+            return Utils.recuperarContenido(urls[0]);
         }
 
         @RequiresApi(api = Build.VERSION_CODES.O)
@@ -72,25 +76,27 @@ public class LoginActivity extends AppCompatActivity {
 
                 for (Usuario u : lista) {
                     if (u.getUsername().equalsIgnoreCase(username.getText().toString())) {
-                        if (Security.desencriptar(u.getPassword()).equals(password.getText().toString())){
+                        if (Security.desencriptar(u.getPassword()).equals(password.getText().toString())) {
                             encontrado = true;
                             idUsuario = u.getId();
+                            location = u.getPlanet();
                         }
                     }
                 }
 
-                if(encontrado){
+                if (encontrado) {
                     Intent i = new Intent(getBaseContext(), HomeActivity.class);
                     i.putExtra("idUsuario", idUsuario);
+                    i.putExtra("location", location);
                     startActivity(i);
-                } else{
+                } else {
                     Snackbar.make(layout, getString(R.string.userNotFound), Snackbar.LENGTH_SHORT).show();
                     username.setText("");
                     password.setText("");
                 }
 
-            } catch (JSONException ignored) {
-
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
     }

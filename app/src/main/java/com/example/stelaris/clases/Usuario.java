@@ -63,8 +63,8 @@ public class Usuario implements Serializable {
         this.photo = photo;
     }
 
-    public String getPlanet() {
-        return planet.toString();
+    public BasePlanet getPlanet() {
+        return planet;
     }
 
     public void setPlanet(BasePlanet planet) {

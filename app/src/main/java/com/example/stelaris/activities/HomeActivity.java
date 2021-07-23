@@ -20,20 +20,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.stelaris.R;
 import com.example.stelaris.bbdd.Usuarios;
+import com.example.stelaris.clases.BasePlanet;
 import com.example.stelaris.clases.Usuario;
+import com.example.stelaris.utils.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
 public class HomeActivity extends AppCompatActivity {
     //TODO Crear los botones para desplazarnos
-    //TODO Conexion con la api de la nasa
     //TODO crear activity de ajustes
+    //https://www.codexpedia.com/android/android-carousel-view-using-viewpager/
+    //https://www.section.io/engineering-education/how-to-create-an-automatic-slider-in-android-studio/
+    //https://www.geeksforgeeks.org/image-slider-in-android-using-viewpager/
     private TextView celeste, descrpicion;
     private ImageView imagenNasa;
     private Button btnMenu;
     private LinearLayout layout;
     private Usuario usuario;
+    private String location;
+    private int idUsuario;
+    private BasePlanet planet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +55,15 @@ public class HomeActivity extends AppCompatActivity {
         this.btnMenu = findViewById(R.id.btnMenu);
         this.layout = findViewById(R.id.home);
 
+        idUsuario = getIntent().getExtras().getInt("idUsuario");
+        planet = (BasePlanet) getIntent().getExtras().getSerializable("location");
+
         conseguirUsuario(getIntent().getExtras().getInt("idUsuario"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         registerForContextMenu(btnMenu);
         this.btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +73,45 @@ public class HomeActivity extends AppCompatActivity {
                 v.showContextMenu(1000, 0);
             }
         });
+
+        if (planet == null)
+            location = BasePlanet.baseplanetToString(usuario.getPlanet());
+        else {
+            if (planet.equals(BasePlanet.tierra))
+                location = "earth";
+        }
+
+        imagenNasa(location);
     }
+
+    private void imagenNasa(String location) {
+        try {
+            String url = "https://images-api.nasa.gov/search?q=" + location + "&media_type=image&keywords=star,space";
+            new Nasa().execute(url);
+        } catch (Exception ignored) {
+
+        }
+    }
+
+    private class Nasa extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... urls) {
+            return Utils.recuperarContenido(urls[0]);
+        }
+
+        protected void onPostExecute(String result) {
+            try {
+                if (result != null) {
+                    JSONObject jsonObject = new JSONObject(result);
+                    List<String> images = com.example.stelaris.bbdd.Nasa.convertirJsonNasa(jsonObject);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     private void conseguirUsuario(int userId) {
         try {
@@ -72,7 +127,7 @@ public class HomeActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... urls) {
-            return Usuarios.recuperarContenido(urls[0]);
+            return Utils.recuperarContenido(urls[0]);
         }
 
         @RequiresApi(api = Build.VERSION_CODES.O)

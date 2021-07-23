@@ -24,6 +24,7 @@ public class Security {
     private static Cipher cipher;
     private static String algoritmo = "AES";
     private static int keysize = 16;
+    public static String nasaKey = "cmEtd8km04mPGdNGRuRaStwZpgbi6kkl8seYUX1K";
 
     public static void addKey(String value) {
 

@@ -114,7 +114,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... urls) {
-            return Usuarios.recuperarContenido(urls[0]);
+            return Utils.recuperarContenido(urls[0]);
         }
 
         protected void onPostExecute(String result) {

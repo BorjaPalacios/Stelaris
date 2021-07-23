@@ -4,6 +4,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.stelaris.clases.BasePlanet;
 import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.utils.Utils;
 
@@ -33,16 +34,19 @@ public class Usuarios {
             Usuario usuario = new Usuario();
             int id;
             String username, email, password;
+            String planet;
 
             id = jsonarray.getJSONObject(i).optInt("idUsuario");
             username = jsonarray.getJSONObject(i).optString("username");
             email = jsonarray.getJSONObject(i).optString("email");
             password = jsonarray.getJSONObject(i).optString("password");
+            planet = jsonarray.getJSONObject(i).optString("planet");
 
             usuario.setId(id);
             usuario.setUsername(username);
             usuario.setEmail(email);
             usuario.setPassword(password);
+            usuario.setPlanet(BasePlanet.stringtoBaseplanet(planet));
             lista.add(usuario);
         }
         return lista;
@@ -60,33 +64,5 @@ public class Usuarios {
             usuario.setPhoto(Base64.getDecoder().decode(jsonObject.optString("photo")));
 
         return usuario;
-    }
-
-    public static String recuperarContenido(String url) {
-        HttpClient httpclient = new DefaultHttpClient();
-        String resultado = null;
-        HttpGet httpget = new HttpGet(url);
-        HttpResponse respuesta;
-        InputStream stream = null;
-        try {
-            respuesta = httpclient.execute(httpget);
-            HttpEntity entity = respuesta.getEntity();
-
-            if (entity != null) {
-                stream = entity.getContent();
-                resultado = Utils.convertirInputToString(stream);
-            }
-        } catch (Exception ignored) {
-
-        } finally {
-            try {
-                if (stream != null) {
-                    stream.close();
-                }
-            } catch (Exception ignored) {
-
-            }
-        }
-        return resultado;
     }
 }

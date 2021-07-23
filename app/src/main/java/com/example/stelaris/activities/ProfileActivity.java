@@ -87,7 +87,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void run() {
                 finish();
             }
-        }, 5000);
+        }, 4000);
     }
 
     private class putUsuario extends AsyncTask<String, Void, String> {
