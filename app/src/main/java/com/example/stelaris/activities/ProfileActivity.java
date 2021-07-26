@@ -121,6 +121,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         imageActivityResultLauncherP.launch(i);
+
     }
 
     public void getPhotoP(View view) throws InterruptedException {

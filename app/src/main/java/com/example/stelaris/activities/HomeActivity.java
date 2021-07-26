@@ -2,6 +2,8 @@ package com.example.stelaris.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,8 +22,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.stelaris.R;
+import com.example.stelaris.bbdd.BbddManager;
 import com.example.stelaris.bbdd.Usuarios;
 import com.example.stelaris.clases.BasePlanet;
+import com.example.stelaris.clases.Planeta;
 import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.clases.carousel.CarouselAdapter;
 import com.example.stelaris.clases.carousel.CarouselItem;
@@ -34,12 +38,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
     //TODO Crear los botones para desplazarnos
     //TODO crear activity de ajustes
-    private TextView celeste, descrpicion;
-    private ImageView imagenNasa;
+    private TextView celeste, descrpicion, planeta;
     private List<CarouselItem> listItems;
     private ViewPager page;
     private TabLayout tabLayout;
@@ -49,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
     private String location;
     private int idUsuario;
     private BasePlanet planet;
+    private SQLiteDatabase db = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +62,20 @@ public class HomeActivity extends AppCompatActivity {
 
         this.celeste = findViewById(R.id.lblCeleste);
         this.descrpicion = findViewById(R.id.lblDescripcion);
-        //this.imagenNasa = findViewById(R.id.imgNasa);
         this.btnMenu = findViewById(R.id.btnMenu);
         this.layout = findViewById(R.id.home);
         this.page = findViewById(R.id.my_pager) ;
         this.tabLayout = findViewById(R.id.my_tablayout);
+        this.planeta = findViewById(R.id.lblNombrePlaneta);
 
         idUsuario = getIntent().getExtras().getInt("idUsuario");
         planet = (BasePlanet) getIntent().getExtras().getSerializable("location");
+
+        if(planet.equals(BasePlanet.tierra))
+        planeta.setText("Earth");
+
+        Planeta bdPlaneta = buscarPlaneta();
+        descrpicion.setText(bdPlaneta.getDescrpcion());
 
         conseguirUsuario(getIntent().getExtras().getInt("idUsuario"));
         try {
@@ -103,6 +114,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private class Nasa extends AsyncTask<String, Void, String> {
 
+        List<CarouselItem> carouselItemList = new ArrayList<>();
+
         @Override
         protected String doInBackground(String... urls) {
             return Utils.recuperarContenido(urls[0]);
@@ -113,20 +126,38 @@ public class HomeActivity extends AppCompatActivity {
                 if (result != null) {
                     JSONObject jsonObject = new JSONObject(result);
                     List<String> images = com.example.stelaris.bbdd.Nasa.convertirJsonNasa(jsonObject);
-                    List<CarouselItem> carouselItemList = new ArrayList<>();
                     for(String image : images){
                         carouselItemList.add(new CarouselItem(image));
                     }
                     CarouselAdapter carouselAdapter = new CarouselAdapter(page.getContext(), carouselItemList);
                     page.setAdapter(carouselAdapter);
                     tabLayout.setupWithViewPager(page,true);
+                    // The_slide_timer
+                    java.util.Timer timer = new java.util.Timer();
+                    timer.scheduleAtFixedRate(new SliderTimer(),2000,3000);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-    }
 
+        public class SliderTimer extends TimerTask {
+            @Override
+            public void run() {
+
+                HomeActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (page.getCurrentItem()< carouselItemList.size()-1) {
+                            page.setCurrentItem(page.getCurrentItem()+1);
+                        }
+                        else
+                            page.setCurrentItem(0);
+                    }
+                });
+            }
+        }
+    }
 
     private void conseguirUsuario(int userId) {
         try {
@@ -182,5 +213,21 @@ public class HomeActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    private Planeta buscarPlaneta(){
+        BbddManager bbddManager = new BbddManager(this, "Planetas", null, 1);
+        db = bbddManager.getReadableDatabase();
+
+        String[] args = new String[] {planeta.getText().toString()};
+
+        Cursor c = this.db.rawQuery("SELECT nombre,padre,hijos,descripcion FROM Planetas WHERE nombre=?", args);
+        c.moveToFirst();
+        String nombre = c.getString(0);
+        String padre = c.getString(1);
+        boolean hijos = c.getInt(2) == 1;
+        String descripcion = c.getString(3);
+
+        return new Planeta(nombre, padre, hijos, descripcion);
     }
 }

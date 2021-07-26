@@ -32,4 +32,84 @@
     <string name="paciencia">This may take a few seconds, please be patient</string>
     <string name="userNotFound">User or password incorrect, please try again</string>
     <string name="guardando">Saving changes …</string>
+
+
+    <string name="mercurioD">Este es el planeta que se encuentra más cercano al Sol, lo que hace difícil
+        observarlo, salvo dos horas después de la puesta del Sol o antes de su salida.\n La órbita de
+        este planeta alrededor del Sol es bastante curiosa, ya que está más inclinada respecto al
+        plano de la eclíptica que el resto de los planetas. Mercurio está tan cerca del Sol que
+        recibe seis veces más radiación solar que la que nos llega a nosotros. Su superficie,
+        al igual que la de la Luna, está llena de cráteres, que también son producto del impacto
+        de meteoritos de variados tamaños, desde la época de formación de los planetas. Estos cráteres
+        se han conservado intactos desde aquellos años, únicamente porque Mercurio no posee atmósfera.</string>
+    <string name="venusD">Venus es el planeta más cercano a la Tierra, y es por eso que muchas veces
+        lo podemos apreciar en el cielo como una estrella muy luminosa. Es más, por su tamaño y distancia
+        del Sol es muy parecido al nuestro; incluso durante muchos años se pensó que en él podría existir
+        tanta vida como en la Tierra. Se ha comprobado que la temperatura de su superficie llega a los 460°C,
+        producto de su atmósfera, que es muy densa. La luz del Sol puede atravesarla y calentar su superficie,
+        pero el calor no es capaz de escapar a través de la atmósfera, quedando siempre atrapado. Esto es lo que
+        denominamos efecto invernadero. La superficie de este pequeño planeta no se ha podido observar
+        claramente, ya que siempre a su alrededor hay una densa capa de nubes. Sin embargo, sabemos
+        que tiene montañas más altas que el propio Monte Everest y posee grandes depresiones que hacen
+        suponer que antiguamente hubo agua en él.</string>
+    <string name="tierraD">La Tierra es el único planeta que tiene agua en forma líquida, otorgándole
+        un intenso color azul; también se encuentra en las nubes de la atmósfera, aunque en forma de
+        cristales de hielo. Otra característica importante es su atmósfera que, a diferencia de Venus
+        o Marte, tiene muy poco dióxido de carbono.\n La corteza terrestre está dividida por placas
+        empujadas por lentas corrientes, las que muchas veces se separan en un período determinado
+        de tiempo y otras chocan entre sí, provocando grandes terremotos.</string>
+    <string name="marteD">Se cree que en el pasado Marte era muy parecido a la Tierra y que en su
+        superficie habrían existido corrientes de agua; sin embargo, hoy en día no se ha descubierto
+        nada líquido, sólo algo de hielo. Su atmósfera es muy tenue y está formada por dióxido de carbono.
+        Constantemente, Marte es víctima de enormes tormentas de polvo que se producen con el cambio de
+        estaciones. Su tamaño es aproximadamente la mitad de nuestra Tierra y su superficie es muy
+        parecida a la de la Luna.</string>
+    <string name="cinturonD">El cinturón de asteroides se formó en la nebulosa protosolar junto con
+        el resto del sistema solar. Los fragmentos de material contenidos en la región del cinturón
+        habrían podido formar un planeta, pero las perturbaciones gravitacionales de Júpiter, el
+        planeta más masivo, produjeron que estos fragmentos colisionaran entre sí a grandes velocidades
+        y no pudieran agruparse, resultando en el residuo rocoso que se observa en la actualidad.
+        Una consecuencia de estas perturbaciones son los huecos de Kirkwood, zonas donde no se encuentran
+        asteroides debido a resonancias orbitales con Júpiter, y sus órbitas se tornan inestables.
+        Si algún asteroide pasa a ocupar esta zona es expulsado en la mayoría de los casos fuera del
+        sistema solar, aunque en ocasiones puede ser enviado hacia algún planeta interior, como la
+        Tierra, y colisionar con ella. Desde su formación se ha expulsado la mayor parte del material.</string>
+    <string name="jupiterD">Este es el planeta más grande del Sistema Solar. Su tamaño es aproximadamente
+        diez veces el tamaño de nuestro planeta y cuenta con un anillo. Posee una fuerza gravitatoria
+        tan grande, que es capaz de afectar el movimiento del resto e incluso alejar cometas de sus
+        órbitas. Gran parte de él está formado por hidrógeno en estado líquido, salvo cerca de la
+        superficie visible, donde la presión es menor y el hidrógeno se puede apreciar en forma de gas.
+        Está cubierto de densas nubes en una atmósfera muy espesa que contiene aproximadamente un
+        88 por ciento de gas hidrógeno molecular y un 11 por ciento de gas helio. Su temperatura puede
+        alcanzar los 123¼C bajo cero, por lo que la vida en él es imposible; pero mientras más se
+        desciende hacia el interior de sus nubes, más se calienta, alcanzando temperaturas cinco veces
+        más altas que en la Tierra.</string>
+    <string name="saturnoD">Sin duda este es uno de los planetas más hermosos del Sistema Solar,
+        por los enormes anillos que posee, contándose tres como los más importantes. Si bien aparece
+        pequeño visto desde la Tierra, Saturno no difiere mucho del tamaño de nuestro planeta;
+        lo que pasa es que está al doble de la distancia de Júpiter, lo que lo hace ver más pequeño.
+        Su característica principal es su baja densidad, ya que es el único planeta del Sistema Solar
+        menos denso que el agua. Eso quiere decir que podríamos hacerlo flotar en una piscina si pudiéramos.
+        Sus anillos pueden observarse simplemente con un telescopio y están compuestos de millones
+        de partículas de polvo y recubiertas de hielo.</string>
+    <string name="uranoD">Fue uno de los planetas descubiertos con la ayuda de un telescopio.
+        Se caracteriza porque su eje de rotación está sobre el plano de su órbita alrededor del Sol,
+        lo que hace que los polos apunten sucesivamente hacia el Sol. En cambio, el resto, tienen su
+        eje más o menos perpendicular al plano de la eclíptica. Además, Urano, al igual que Saturno,
+        posee anillos. Hasta hace un tiempo se pensaba que sus satélites eran cinco, pero se han
+        descubierto diez más. Su diámetro es casi cuatro veces el de la Tierra y su densidad oscila
+        entre la de Júpiter y la de Saturno, y la de la Tierra y la Luna. En su interior tendría la
+        mitad de agua, un cuarto de metano y un cuarto de material rocoso y metálico, parecido a la
+        Tierra. Sobre todo esto estaría su atmósfera.</string>
+    <string name="neptunoD">Neptuno fue descubierto en 1846. Es uno de los planetas más grandes y se
+        caracteriza por su intenso color azul. Este planeta fue descubierto a través de un telescopio
+        en el año 1846 y ha sido el último visitado por una sonda interplanetaria. Posee cuatro anillos
+        muy estrechos y ocho satélites, aunque se mencionan normalmente los dos más grandes: Nereida
+        y Tritón. La atmósfera de Neptuno posee metano e hidrógeno y otros gases que aún no están
+        identificados. Además, estaría rodeado por una capa de nubes, parecidas a la de Júpiter, Saturno y Urano.
+        La estructura interior de este planeta se parece mucho a la de Urano; es decir, tendría un
+        núcleo rocoso varias veces superior al tamaño de la Tierra, rodeado por grandes capas de hielo.
+        Las imágenes que se han captado a través de sondas han permitido ver el color azulado de este
+        planeta, producto del metano contenido en su atmósfera. Este planeta también posee anillos,
+        que son completos y con ciertas partes más brillantes que otras.</string>
 </resources>
