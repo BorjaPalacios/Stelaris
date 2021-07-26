@@ -26,20 +26,26 @@ public class CarouselAdapter extends PagerAdapter {
 
     @NonNull
     @Override
-    public Object instantiateItem( ViewGroup container, int position) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View sliderLayout = inflater.inflate(R.layout.carousel_layout,null);
+    public Object instantiateItem(ViewGroup container, int position) {
+        try {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View sliderLayout = inflater.inflate(R.layout.carousel_layout, null);
 
-        ImageView featured_image = sliderLayout.findViewById(R.id.my_featured_image);
+            ImageView featured_image = sliderLayout.findViewById(R.id.my_featured_image);
 
-        Picasso.get().load(carouselItemList.get(position).getUrl()).into(featured_image);
-        container.addView(sliderLayout);
-        return sliderLayout;
+            Picasso.get().load(carouselItemList.get(position).getUrl()).into(featured_image);
+
+            container.addView(sliderLayout);
+            return sliderLayout;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((View)object);
+        container.removeView((View) object);
     }
 
     @Override

@@ -38,9 +38,6 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
     //TODO Crear los botones para desplazarnos
     //TODO crear activity de ajustes
-    //https://www.codexpedia.com/android/android-carousel-view-using-viewpager/
-    //https://www.section.io/engineering-education/how-to-create-an-automatic-slider-in-android-studio/
-    //https://www.geeksforgeeks.org/image-slider-in-android-using-viewpager/
     private TextView celeste, descrpicion;
     private ImageView imagenNasa;
     private List<CarouselItem> listItems;
@@ -120,7 +117,7 @@ public class HomeActivity extends AppCompatActivity {
                     for(String image : images){
                         carouselItemList.add(new CarouselItem(image));
                     }
-                    CarouselAdapter carouselAdapter = new CarouselAdapter(getBaseContext(), carouselItemList);
+                    CarouselAdapter carouselAdapter = new CarouselAdapter(page.getContext(), carouselItemList);
                     page.setAdapter(carouselAdapter);
                     tabLayout.setupWithViewPager(page,true);
                 }
