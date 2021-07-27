@@ -8,7 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.stelaris.R;
 
 public class BbddManager extends SQLiteOpenHelper {
-    //TODO Crear todo el sistema de sqlite
+    //TODO Falta el cinturon
+    //TODO descripcion de las lunas, nombre en ingles
     String sqlPlanetas = "CREATE TABLE IF NOT EXISTS Planetas (" +
             " nombre TEXT PRIMARY KEY," +
             " padre TEXT NOT NULL," +
@@ -18,6 +19,11 @@ public class BbddManager extends SQLiteOpenHelper {
     String sqlLunas = "CREATE TABLE IF NOT EXISTS Lunas (" +
             " nombre TEXT PRIMARY KEY," +
             " padre TEXT NOT NULL)";
+
+    String sqlEstrellas = "CREATE TABLE IF NOT EXISTS Estrellas (" +
+            " nombre TEXT PRIMARY KEY," +
+            " descripcion TEXT NOT NULL," +
+            " hijos INTEGER NOT NULL)";
 
     Context context;
 
@@ -30,6 +36,7 @@ public class BbddManager extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(sqlPlanetas);
         db.execSQL(sqlLunas);
+        db.execSQL(sqlEstrellas);
 
         db.execSQL("INSERT INTO Planetas (nombre, padre, hijos, descripcion) VALUES ('Mercury', 'Sun', 0,'" + context.getString(R.string.mercurioD) +"')");
         db.execSQL("INSERT INTO Planetas (nombre, padre, hijos, descripcion) VALUES ('Venus', 'Sun', 0,'" + context.getString(R.string.venusD) +"')");
@@ -41,9 +48,9 @@ public class BbddManager extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Planetas (nombre, padre, hijos, descripcion) VALUES ('Uranus', 'Sun', 1,'" + context.getString(R.string.uranoD) +"')");
         db.execSQL("INSERT INTO Planetas (nombre, padre, hijos, descripcion) VALUES ('Neptune', 'Sun', 1,'" + context.getString(R.string.neptunoD) +"')");
 
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Moon', 'Tierra')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Fobos', 'Marte')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Deimos', 'Marte')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Moon', 'Earth')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Fobos', 'Mars')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Deimos', 'Mars')");
         db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Io', 'Jupiter')");
         db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Europa', 'Jupiter')");
         db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Ganimedes', 'Jupiter')");
@@ -51,28 +58,30 @@ public class BbddManager extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Metis', 'Jupiter')");
         db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Adrastea', 'Jupiter')");
         db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Amaltea', 'Jupiter')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Titan', 'Saturno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Mimas', 'Saturno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Encelado', 'Saturno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Tetis', 'Saturno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Dione', 'Saturno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Rea', 'Saturno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Hiperion', 'Saturno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Japeto', 'Saturno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Febe', 'Saturno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Miranda', 'Urano')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Ariel', 'Urano')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Umbriel', 'Urano')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Titania', 'Urano')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Oberon', 'Urano')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Triton', 'Neptuno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Nereida', 'Neptuno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Nayade', 'Neptuno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Talasa', 'Neptuno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Despina', 'Neptuno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Galatea', 'Neptuno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Larisa', 'Neptuno')");
-        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Proteo', 'Neptuno')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Titan', 'Saturn')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Mimas', 'Saturn')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Encelado', 'Saturn')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Tetis', 'Saturn')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Dione', 'Saturn')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Rea', 'Saturn')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Hiperion', 'Saturn')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Japeto', 'Saturn')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Febe', 'Saturn')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Miranda', 'Uranus')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Ariel', 'Uranus')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Umbriel', 'Uranus')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Titania', 'Uranus')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Oberon', 'Uranus')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Triton', 'Neptune')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Nereida', 'Neptune')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Nayade', 'Neptune')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Talasa', 'Neptune')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Despina', 'Neptune')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Galatea', 'Neptune')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Larisa', 'Neptune')");
+        db.execSQL("INSERT INTO Lunas (nombre, padre) VALUES ('Proteo', 'Neptune')");
+
+        db.execSQL("INSERT INTO Estrellas (nombre, descripcion, hijos) VALUES ('Sun', '" + context.getString(R.string.solD) + "', 1)");
 
     }
 
