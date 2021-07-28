@@ -45,8 +45,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
-    //TODO Crear los botones para desplazarnos
-    //TODO crear activity de ajustes
+    //TODO crear activity de ajustes?
     private TextView celeste, descrpicion, planeta;
     private List<CarouselItem> listItems;
     private ViewPager page;
@@ -114,7 +113,7 @@ public class HomeActivity extends AppCompatActivity {
     private void imagenNasa(String location) {
         try {
             String url;
-            if(location.equalsIgnoreCase("mars"))
+            if (location.equalsIgnoreCase("mars"))
                 url = "https://images-api.nasa.gov/search?q=" + location + "&media_type=image&keywords=planet,space";
             else
                 url = "https://images-api.nasa.gov/search?q=" + location + "&media_type=image&keywords=" + location;
@@ -127,7 +126,6 @@ public class HomeActivity extends AppCompatActivity {
     private class Nasa extends AsyncTask<String, Void, String> {
 
         List<CarouselItem> carouselItemList = new ArrayList<>();
-
 
         @Override
         protected String doInBackground(String... urls) {
@@ -250,7 +248,7 @@ public class HomeActivity extends AppCompatActivity {
         this.bdEstrella = null;
         setPlaneta(bdPlaneta);
 
-        imagenNasa(location);
+        imagenNasa(bdPlaneta.getNombre());
     }
 
     private void setPlaneta(Planeta planeta1) {
@@ -284,7 +282,7 @@ public class HomeActivity extends AppCompatActivity {
         else
             imagenNasa(luna.getNombre());
         this.planeta.setText(luna.getNombre());
-        this.descrpicion.setText("");
+        this.descrpicion.setText(luna.getDescripcion());
 
         this.btnHijos.setClickable(false);
         this.btnHijos.setBackgroundColor(Color.parseColor("#EEEEEE"));

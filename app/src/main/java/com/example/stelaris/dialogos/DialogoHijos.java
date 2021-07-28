@@ -44,13 +44,14 @@ public class DialogoHijos extends DialogFragment {
 
             String[] args = new String[]{this.nombre};
 
-            Cursor c = this.db.rawQuery("SELECT nombre,padre FROM Lunas WHERE padre=?", args);
+            Cursor c = this.db.rawQuery("SELECT nombre,padre,descripcion FROM Lunas WHERE padre=?", args);
             c.moveToFirst();
             while (!c.isAfterLast()) {
                 String nombre = c.getString(0);
                 String padre = c.getString(1);
+                String descripcion = c.getString(2);
 
-                Luna luna = new Luna(nombre, padre);
+                Luna luna = new Luna(nombre, padre, descripcion);
                 lunas.add(luna);
                 c.moveToNext();
             }

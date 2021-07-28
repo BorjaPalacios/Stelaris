@@ -32,6 +32,7 @@
     <string name="paciencia">This may take a few seconds, please be patient</string>
     <string name="userNotFound">User or password incorrect, please try again</string>
     <string name="guardando">Saving changes …</string>
+    <string name="logging">Logging …</string>
 
 
     <string name="mercurioD">Este es el planeta que se encuentra más cercano al Sol, lo que hace difícil
@@ -127,4 +128,536 @@
         baja de la atmósfera. Por encima de la fotosfera se encuentran la cromosfera y la corona, que
         también emiten luz visible pero solamente se pueden ver durante eclipses solares, cuando la
         luna pasa entre la Tierra y el Sol.</string>
+    <string name="lunaD">La Luna es el satélite natural de la Tierra. Es un cuerpo del tipo terrestre
+        relativamente grande: con un diámetro de alrededor de la cuarta parte del de la Tierra,
+        es el segundo satélite más grande del Sistema Solar en relación al tamaño de su planeta,
+        después del satélite Caronte de su planeta enano Plutón. Los satélites naturales que orbitan
+        los demás planetas se denominan "lunas" en referencia a la Luna de la Tierra. La atracción
+        gravitatoria entre la Tierra y la Luna causa las mareas en la Tierra. El mismo efecto en la
+        Luna ha dado lugar a su acoplamiento de marea, lo que significa que su período de rotación
+        es idéntico a su periodo de traslación alrededor de la Tierra. Como resultado, la luna siempre
+        presenta la misma cara hacia nuestro planeta. A medida que la Luna orbita la Tierra, diferentes
+        partes de su cara son iluminadas por el Sol, dando lugar a las fases lunares. La parte oscura
+        de la cara está separada de la parte iluminada del terminador solar. Debido a la interacción
+        de las mareas, la Luna se aleja de la Tierra a una velocidad de aproximadamente 38 mm al año.
+        Acumuladas durante millones de años, estas pequeñas modificaciones, así como el alargamiento
+        del día terrestre en alrededor de 23 µs, han producido cambios significativos. Durante
+        el período devónico, por ejemplo, (hace aproximadamente 410 millones de años) un año tenía 400
+        días, cada uno con una duración de 21,8 horas.</string>
+    <string name="fobosD">Fobos (del griego Φóβoς, "miedo") es la más grande de los dos satélites de
+        Marte y la más cercana al planeta, siendo Deimos la otra luna. Ambas fueron descubiertas por
+        el astrónomo estadounidense Asaph Hall (1829-1907) el 18 de agosto de 1877, con el gran refractor
+        de 66 cm del Observatorio Naval de los Estados Unidos de Washington D. C., obra del óptico
+        norteamericano Alvan Clark (1804-1887). Fue el propio descubridor el que propuso los nombres,
+        inspirado por el libro XV de la Ilíada, en el que el dios Ares (Marte en la mitología romana)
+        invoca al miedo (fobos) y al terror (deimos). Fobos es un pequeño satélite, de forma irregular,
+        cuyo radio medio es de once kilómetros. Siempre presenta la misma cara a Marte, debido al
+        anclaje por marea ejercido por el planeta. Orbita a unos 6000 kilómetros de la superficie marciana,
+        lo que le convierte en el satélite más próximo a su planeta del sistema solar. Estas fuerzas
+        de marea crean una desaceleración en Fobos, perdiendo este velocidad orbital, lo que ocasionará
+        su colisión con Marte dentro de unos 50 a 100 millones de años, o bien su desintegración y
+        formación de un anillo alrededor del planeta.</string>
+    <string name="deimosD">Deimos (del griego Δείμος, «terror») es el más pequeño y externo de los dos
+        satélites de Marte y de los satélites más pequeños que han recibido nombre, llamado así por Deimos,
+        un personaje de la mitología griega. En rotación síncrona con el planeta, recorre una órbita
+        casi circular, muy próxima al plano ecuatorial marciano, en 30,3 horas: un periodo ligeramente
+        superior a la rotación del planeta rojo.Es de forma irregular. Tiene un diámetro medio de
+        12,4 km, una masa estimada de 1,4762×1015 kg y una densidad media de 1471 kg/m³.Su composición,
+        supuesta similar a la de los asteroides de tipo D y los núcleos cometarios extintos, plantea
+        serias dificultades a los estudiosos que tratan de explicar su origen.</string>
+    <string name="ganimedesD">Ganimedes (del griego Γανυμήδης) es el satélite natural más grande de Júpiter
+        y del sistema solar,además de ser el único que tiene campo magnético. En orden de distancias
+        al planeta, es el séptimo más cercano y el tercero de los galileanos, el primer grupo de objetos
+        descubiertos que orbitan alrededor de un planeta. Completa su órbita en aproximadamente siete
+        días y mantiene una resonancia orbital con Ío y Europa de 1:2:4. Su diámetro es de 5.268 km,
+        un 8 % mayor que el de Mercurio, aunque solo representa el 45 % de su masa. Es un 2 % mayor
+        que Titán, el segundo satélite natural más grande, y el doble de masivo que la Luna. En
+        términos absolutos, es el noveno objeto más grande del sistema solar y el mayor que no posee
+        una atmósfera significativa. Ganimedes se compone de silicatos y hielo de agua en cantidades
+        aproximadamente iguales. Es un objeto diferenciado con un núcleo fundido rico en hierro y un
+        océano interno que puede poseer más agua que todos los océanos de la Tierra juntos. Su superficie
+        está constituida por dos tipos diferentes de terrenos: oscuros y claros. Las regiones oscuras,
+        saturadas de cráteres de impacto y formadas hace cuatro mil millones de años, cubren alrededor
+        de un tercio del satélite. El resto de la superficie está ocupado por regiones claras, áreas
+        cortadas por amplios surcos y crestas, y solo un poco menos antiguas. Las causas geológicas
+        de la perturbación que los originó no se conocen del todo, pero los terrenos claros son quizá
+        el resultado de la actividad tectónica provocada por el calentamiento de marea. Probablemente
+        el campo magnético de Ganimedes es producto de movimientos de convección dentro del núcleo de
+        hierro fundido. Su escasa fuerza está oculta dentro del mucho más potente campo magnético de
+        Júpiter y solo se mostraría como una perturbación local de las líneas de campo. El satélite
+        tiene una delgada atmósfera de oxígeno que incluye ozono y oxígeno atómico y molecular.
+        El hidrógeno atómico es un componente atmosférico menor. Está sin resolver si el satélite tiene
+        una ionosfera asociada a la atmósfera. El descubrimiento de Ganimedes se atribuye a Galileo,
+        quien fue el primero en observarlo el 7 de enero de 1610. Su nombre fue sugerido por el astrónomo
+        Simon Marius poco después del descubrimiento y hace referencia a Ganimedes, el copero de los
+        dioses y amante de Zeus. Comenzando con la Pioneer 10, varias sondas espaciales han examinado
+        el satélite de cerca. Las Voyager refinaron los valores de sus características físicas, mientras
+        que la Galileo descubrió su océano subterráneo y su campo magnético. La Agencia Espacial Europea
+        (ESA) tiene en proyecto una misión al sistema joviano —Jupiter Icy Moon Explorer (JUICE)— cuyo
+        lanzamiento se prevé en 2022. Tras varios sobrevuelos de los tres satélites galileanos helados,
+        está previsto que la sonda entre en órbita alrededor de Ganimedes.</string>
+    <string name="calistoD">Calisto (del griego Καλλιστώ) es un satélite del planeta Júpiter descubierto
+        en 1610 por Galileo Galilei.Es el tercer satélite más grande del sistema solar y el segundo del
+        sistema joviano, después de Ganimedes. Calisto tiene aproximadamente el 99 % del diámetro del
+        planeta Mercurio, pero solo un tercio de su masa. Es el cuarto satélite galileano en cuanto
+        a distancia a Júpiter, con un radio orbital de 1 880 000 kilómetros.No está influido por la
+        resonancia orbital que afecta a los tres satélites galileanos interiores —Ío, Europa y Ganimedes—,
+        por lo que no sufre un calentamiento apreciable por fuerzas de marea, como sí ocurre en los
+        otros tres.Calisto tiene una rotación síncrona, es decir, su período de rotación concuerda
+        con su período orbital, de manera que, igual que la Luna con la Tierra, siempre «muestra»
+        la misma cara a Júpiter. La superficie de Calisto no está tan influida por la magnetosfera de
+        Júpiter como la de los otros satélites interiores ya que su órbita es más alejada. Este
+        satélite está compuesto aproximadamente por partes iguales de roca y hielo, con una densidad
+        media de unos 1,83 g/cm³. Los componentes detectados mediante la firma espectral de la superficie
+        incluyen hielo, dióxido de carbono, silicatos y compuestos orgánicos. La investigación de la
+        sonda espacial Galileo reveló que Calisto tiene un núcleo, compuesto principalmente de silicatos,
+        y además, la posibilidad de la existencia de un océano interno de agua a una profundidad superior
+        a 100 kilómetros. La superficie de Calisto está repleta de cráteres y es muy antigua. No presenta
+        señales de actividad tectónica y se piensa que su evolución se ha producido predominantemente
+        bajo la influencia de los impactos de numerosos meteoritos a lo largo de su existencia. Los
+        principales accidentes geográficos incluyen múltiples estructuras, como cráteres de impacto,
+        grandes cuencas de impacto con múltiples anillos concéntricos (con los escarpes, crestas y
+        depósitos a ellas asociados) y cadenas de cráteres (catenae). A pequeña escala, la superficie
+        es variada y consiste en pequeños y brillantes depósitos congelados en las cimas de las alturas,
+        rodeadas por un litoral bajo, compuesto de material oscuro.La edad absoluta de los accidentes
+        geográficos se desconoce. Calisto está rodeado por una atmósfera extremadamente fina, compuesta
+        de dióxido de carbono y probablemente de oxígeno molecular, además de una ionosfera relativamente
+        fuerte.Se piensa que el segundo satélite mayor de Júpiter se formó por una «lenta» acreción del
+        remolino de materia que rodeó Júpiter después de su formación.Esta lentitud y la falta de fuerza
+        de marea evitaron una rápida diferenciación química. La también lenta convección en el interior
+        de Calisto, que empezó poco después de su formación, ha producido una diferenciación química
+        parcial y aporta la posibilidad de un océano interior a una profundidad de 100 a 150 kilómetros,
+        así como un pequeño núcleo rocoso. La probable presencia de un océano líquido bajo la superficie
+        de Calisto indica que puede o podría haber albergado vida. Sin embargo, esto es menos probable
+        que en Europa. Diversas sondas espaciales, como la Pioneer 10 y 11 o la Galileo y la Cassini,
+        han estudiado el satélite. Calisto está considerado el lugar más «acogedor» para una base humana
+        en una futura exploración del sistema joviano.</string>
+    <string name="ioD">o es el satélite galileano más cercano a Júpiter. Es el tercer satélite por
+        su tamaño, tiene la más alta densidad entre todos los satélites y, en proporción, la menor
+        cantidad de agua entre todos los objetos conocidos del sistema solar. Fue descubierto por
+        Galileo Galilei en 1610. Recibe su nombre de Ío, una de las muchas doncellas de las que Zeus
+        se enamoró en la mitología griega, aunque inicialmente recibió el nombre de Júpiter I por ser
+        el primer satélite de Júpiter según su cercanía al planeta. Con un diámetro de 3600 kilómetros,
+        es la tercera más grande de las lunas de Júpiter. En Ío hay planicies muy extensas y también
+        cadenas montañosas, pero la ausencia de cráteres de impacto sugiere la juventud geológica
+        de su superficie. Con más de 400 volcanes activos, es el objeto más activo geológicamente
+        del sistema solar. Esta actividad tan elevada se debe al calentamiento por marea, que es la
+        respuesta a la disipación de enormes cantidades de energía proveniente de la fricción provocada
+        en el interior del satélite. Varios volcanes producen nubes de azufre y dióxido de azufre,
+        que se elevan hasta los 500 km. Su superficie también posee más de cien montañas que han sido
+        levantadas por la extrema compresión en la base de la corteza de silicatos del satélite.
+        Algunas de estas montañas son más altas que el Monte Everest. A diferencia de la mayoría de
+        los satélites externos del sistema solar, que se encuentran cubiertos de gruesas capas de hielo,
+        Ío está compuesto principalmente de roca de silicato rodeando un núcleo de hierro derretido.
+        Ío cumplió un papel importante en el desarrollo de la astronomía durante los siglos XVII y XVIII,
+        ayudando a la adopción del modelo heliocéntrico de Copérnico del sistema solar y de las Leyes
+        de Kepler del movimiento planetario. La primera medición de la velocidad de la luz fue realizada
+        por Ole Rømer midiendo el periodo de traslación de Ío.</string>
+    <string name="europaD">Europa es el sexto satélite natural de Júpiter en orden creciente de
+        distancia y el más pequeño de los cuatro satélites galileanos. Fue descubierto en 1610 por
+        Galileo y nombrado por Europa, la madre del rey Minos de Creta y amante de Zeus. Simon Marius
+        sugirió el nombre tras su descubrimiento, pero este nombre, así como el nombre de los otros
+        satélites galileanos, no fue de uso común hasta mediados del siglo XX. En gran parte de la
+        literatura astronómica temprana aparece mencionado por su designación numeral romana, Júpiter
+        II, o como el segundo satélite de Júpiter. Además de haber sido observado mediante telescopios
+        terrestres, varias sondas espaciales (las primeras a principios de los años 1970) lo han examinado
+        de cerca. Es el sexto satélite más grande del sistema solar. Ligeramente más pequeño que la Luna,
+        Europa está compuesto principalmente por silicatos, tiene una corteza de hielo de agua y un
+        probable núcleo de hierro y níquel. Cuenta con una tenue atmósfera compuesta de oxígeno, entre
+        otros gases. Su superficie está estriada por grietas y rayas, mientras que los cráteres son
+        relativamente raros. Tiene la superficie más lisa de cualquier objeto conocido del sistema solar.
+        Esta aparente juventud y suavidad ha dado lugar a la hipótesis de que existe un océano debajo
+        de la superficie, el cual podría servir de morada para la vida. Esta hipótesis propone que el
+        calor de las fuerzas de marea causa que el océano se mantenga líquido y conduzca la actividad
+        geológica igual que lo harían las placas tectónicas. El 8 de septiembre de 2014 la NASA informó
+        de que había encontrado pruebas que apoyaban indicios tempranos de placas tectónicas en la gruesa
+        cubierta helada de Europa, la primera señal de tal actividad geológica en otro mundo distinto
+        de la Tierra. El 12 de mayo de 2015, varios científicos anunciaron que la sal marina del océano
+        subsuperficial podía estar cubriendo algunas características geológicas de Europa, lo que sugiere
+        que el océano está interactuando con el fondo del mar. Esto puede ser importante para determinar
+        si el satélite podría ser apto para la vida.</string>
+    <string name="amalteaD">Amaltea (en griego: Αμάλθεια) es el tercer satélite de Júpiter en orden
+        de distancia, y el miembro principal del Grupo de Amaltea. Fue descubierto el 9 de septiembre
+        de 1892 por el astrónomo estadounidense E. E. Barnard desde el observatorio Lick de la Universidad
+        de California. El nombre proviene de Amaltea, una ninfa de la mitología griega. También recibe
+        el nombre de Júpiter V. Amaltea describe una órbita casi circular muy cercana a Júpiter, y
+        forma parte del anillo de Amalthea, constituido principalmente por material de su propia
+        superficie.Desde la superficie de Amaltea, Júpiter abarcaría una gran fracción del cielo,
+        siendo unas 92 veces mayor que la Luna vista desde la Tierra. Tiene una forma irregular,
+        es de color rojizo, y probablemente está formado por hielo de agua, junto con una cantidad
+        desconocida de otros materiales. El relieve de su superficie está plagado de cráteres y
+        montañas enormes.</string>
+    <string name="metisD">Metis, también conocido como Júpiter XVI, es el satélite más cercano a la
+        superficie de Júpiter. Fue descubierto en 1979 en imágenes enviadas por la sonda espacial
+        Voyager 1. En 1983 la Unión Astronómica Internacional lo nombró oficialmente como Metis, en
+        referencia a la Titánide que fue la primera esposa de Zeus y madre de Atenea. Las observaciones
+        adicionales realizadas entre principios de 1996 y septiembre de 2003 por la sonda Galileo
+        permitieron capturar la superficie de la luna en imágenes. Metis está en órbita anclada por
+        las mareas de Júpiter, y su forma es muy asimétrica: su diámetro mayor es casi del doble de
+        largo que el menor. Su órbita se encuentra dentro del anillo principal de Júpiter, y se cree
+        que es un contribuyente importante al material de los anillos.</string>
+    <string name="adrasteaD">Adrastea es el segundo satélite de Júpiter en orden de distancia al planeta
+        y es el más pequeño de los cuatro satélites interiores. Fue descubierto en las fotografías
+        tomadas por la sonda espacial Voyager 2 en 1979, y posteriormente, en 1983, tomó oficialmente
+        el nombre de la mítica Adrastea, hija de Meliseo y de Ananké. Este satélite pertenece al
+        Grupo de Amaltea de pequeñas lunas jovianas y se encuentra dentro del anillo planetario de
+        Júpiter. Su órbita se encuentra dentro de la distancia orbital síncrona del planeta, por lo
+        que las fuerzas de marea causan un lento descenso en su altura orbital.</string>
+    <string name="tebeD">Tebe es uno de los pequeños satélites interiores de Júpiter, el cuarto en
+        orden creciente de distancias y el segundo en tamaño del grupo de Amaltea con casi 100 km
+        de diámetro medio. Fue descubierto en 1979 por Stephen Synnott. Su nombre deriva de varios
+        personajes homónimos de la mitología griega. Orbita en el anillo difuso de Tebe cerca de su
+        borde exterior. Tiene forma irregular y color rojizo. Los principales modelos geológicos
+        indican que está formado por hielo de agua poroso con cantidades desconocidas de otras sustancias,
+        al igual que Amaltea. Entre sus características superficiales se incluyen grandes cráteres
+        (comparables al diámetro del satélite) y altas montañas. Fue fotografiado por las sondas
+        Voyager y, en mayor detalle, por el orbitador Galileo.</string>
+    <string name="titanD">Titán es el mayor de los satélites de Saturno y el segundo del sistema solar
+        tras Ganimedes. Además el único satélite conocido que posee una atmósfera importante, y el
+        único objeto, aparte de la Tierra, en el que se ha encontrado evidencia clara de cuerpos
+        líquidos estables en la superficie. Es el sexto satélite elipsoidal de Saturno y frecuentemente
+        es descrito como un satélite similar a un planeta. Tiene un diámetro un 50 % más grande que la
+        Luna y es un 80 % más masivo; es más grande en volumen que el planeta Mercurio, aunque su masa
+        representa el 40 % de este último. Fue descubierto en 1655 por el astrónomo neerlandés Christiaan
+        Huygens y fue el primer satélite conocido de Saturno, y el quinto satélite conocido de otro planeta.
+        Está compuesto principalmente de hielo y material rocoso, y así como con Venus antes de la era espacial,
+        la atmósfera densa y opaca de Titán impedía la comprensión de su superficie hasta la llegada
+        de la misión Cassini-Huygens en 2004, incluyendo el descubrimiento de lagos de hidrocarburos
+        líquidos en las regiones polares. La superficie es geológicamente joven, a pesar de las montañas
+        y el descubrimiento de varios posibles criovolcanes, es suave y con pocos cráteres de impacto.
+        Según los datos disponibles su atmósfera podría estar compuesta principalmente de nitrógeno,
+        pero hasta un 6 % puede ser metano y compuestos complejos de hidrocarburos. El clima, incluyendo
+        viento y lluvia, crea accidentes geográficos similares a los de la Tierra, tales como dunas,
+        ríos, lagos, mares (probablemente de metano líquido y etano) y deltas, y está dominado por
+        patrones climáticos estacionales como en la Tierra. Con sus líquidos (tanto superficiales
+        como subterráneos) y su robusta atmósfera de nitrógeno, el ciclo del metano de Titán es visto
+        como una analogía con el ciclo del agua de la Tierra, aunque a una temperatura mucho más baja.
+        El día 2 de octubre de 2013, fue anunciado que el espectrómetro infrarrojo compuesto de la sonda
+        Cassini (CIRS, por sus siglas en inglés) detectó propileno en la baja atmósfera de este satélite,
+        lo que se convierte en la primera detección definitiva de esta sustancia en cualquier parte del
+        Sistema Solar, exceptuando la Tierra. Actualmente existe un proyecto ya en marcha por parte de
+        la NASA, para llevar una sonda en 2024 a Titán, llamada Dragonfly, que se desplazará por el
+        satélite volando al tratarse de un dron.</string>
+    <string name="hiperionD">Hiperión es un satélite de Saturno, el séptimo satélite clásico en orden
+        de distancia desde el planeta. Se distingue por su forma irregular, su rotación caótica, y su
+        apariencia inexplicable parecida a una esponja. Está en órbita a una distancia media de
+        1.481.000 km, realizando una vuelta en poco más de veintiún días y seis horas. De forma
+        relativamente irregular, tiene un diámetro de alrededor de 300 km y una masa mil veces inferior
+        a la de nuestra Luna. Su densidad es extraordinariamente baja, por lo que en su mayor parte
+        debe estar lleno de cavidades. Hiperión fue descubierto en 1848 por los astrónomos William C.
+        Bond y su hijo George P. Bond, e independientemente por William Lassell. Probablemente está
+        formado en su mayoría por hielo de agua.</string>
+    <string name="japetoD">Jápeto es uno de los satélites del planeta Saturno. Es el octavo más distante
+        al planeta y el tercero en tamaño, con un diámetro de alrededor de 1500 km, después de los satélites 
+        más grandes Titán y Rea. Fue descubierto por Giovanni Cassini en 1671. Tarda en completar una vuelta
+        alrededor de Saturno 79,33 días terrestres, a una distancia media de 3 561 300 km. Uno de los
+        hemisferios del satélite es mucho más oscuro que el otro, peculiar característica que se podría
+        deber a una composición distinta del material de la superficie, proveniente del interior de la
+        propia luna o bien de materia de otros satélites o anillos. No se conoce con certeza el motivo
+        real, aunque la segunda hipótesis cada vez es más apoyada por evidencias observacionales.</string>
+    <string name="mimasD">Mimas es un satélite de Saturno descubierto en 1789 por William Herschel y
+        denominado en aquel momento como Saturno I por ser el satélite más interno (gira alrededor de
+        Saturno en ~ 22,5 horas) de los descubiertos por Herschel. El nombre posterior, Mimas, proviene
+        de la mitología griega, siendo Mimas uno de los gigantes, hijo de Gea.</string>
+    <string name="enceladoD">Encélado es el sexto satélite más grande de Saturno con unos 500 km de
+        diámetro, aproximadamente la décima parte del de Titán, el mayor satélite saturniano. Está
+        cubierto por una capa de hielo reciente y limpio que refleja casi toda la luz solar que incide
+        sobre él, por lo que la temperatura superficial es muy baja, solo alcanza los –198 °C a mediodía.
+        A pesar de su pequeño tamaño, tiene una amplia variedad de rasgos superficiales que van desde
+        regiones antiguas y craterizadas a terrenos jóvenes y deformados tectónicamente que se formaron
+        hace apenas cien millones de años. Fue descubierto el 28 de agosto de 1789 por William Herschel,
+        pero se sabía muy poco de él hasta que las sondas Voyager pasaron muy cerca a principios de la década
+        de 1980. En 2005, la sonda Cassini comenzó una serie de sobrevuelos que revelaron mayores detalles.
+        En concreto, descubrió penachos ricos en agua en el polo sur. Los criovolcanes cercanos al polo
+        su expulsaban al espacio, en forma de géiseres, chorros de vapor de agua, otras sustancias volátiles
+        y material sólido que incluía cristales de cloruro sódico y partículas de hielo, con tasas de
+        expulsión de hasta doscientos kilogramos por segundo. Se han identificado más de cien géiseres.
+        Parte del vapor de agua cae de nuevo en forma de nieve; el resto escapa y suministra la mayor
+        parte del material que constituye el anillo E. Según científicos de la NASA, la composición
+        de los penachos es similar a la de los cometas. En 2014, la NASA informó de que había encontrado
+        pruebas de la presencia de un gran océano subsuperficial de agua en el polo sur de unos diez
+        kilómetros de espesor. Se encuentra en resonancia orbital 2:1 con Dione, situación similar al
+        caso de Io y Europa, lo cual pudiera proveer la energía necesaria para calentar levemente este
+        satélite, aunque la causa (o causas) del calentamiento de Encélado es un tema de investigación;
+        de hecho, la producción de calor en el polo sur de este satélite es de casi dieciséis megavatios,
+        diez veces más de lo que se pensaba, y cuyo origen es desconocido por ahora. Debajo de la superficie
+        del satélite existe un océano global de agua líquida, como una capa entre el hielo de la superficie
+        y el núcleo rocoso. Probablemente es calentado por muchas fuentes hidrotermales, lo que despierta
+        gran interés al existir las condiciones necesarias para la vida. En abril de 2017 la NASA notificó
+        que en la superficie del satélite existen géiseres y fumarolas que expulsan vapor de agua desde
+        su océano. Según los científicos este vapor expulsaría elementos químicos entre los que se
+        encuentra el hidrógeno, lo que haría factible la posibilidad de vida microbiana.</string>
+    <string name="tetisD">Tetis es el quinto satélite más grande de Saturno con un diámetro de 1060 km.
+        Está situado a una distancia de 294 619 km del centro del planeta y su periodo orbital es de
+        1,888 días, el mismo que su rotación. Fue descubierto en 1684 por el astrónomo francés de origen
+        italiano Giovanni Domenico Cassini (1625-1712). Tiene la densidad más baja entre los mayores
+        satélites del sistema solar, lo que indica que está compuesto por hielo de agua con una muy
+        pequeña fracción de roca. La confirmación vino de los resultados espectroscópicos que identificaron
+        al hielo de agua como la sustancia dominante de la superficie. También apareció una cantidad
+        pequeña de un material oscuro sin identificar. La superficie de Tetis es muy brilante, ocupando
+        la segunda posición en brillo de los satélites saturnianos tras Encélado. Está intensamente
+        craterizado y cortado por varias largas fallas. El mayor cráter de impacto, Odysseus, tiene
+        unos 400 km de diámetro, mientras que la falla más larga, Ithaca Chasma, tiene unos 100 km de
+        ancho y más de 2000 km de longitud. Estas dos enormes estructuras pueden estar relacionadas.
+        Una pequeña parte de la superficie está cubierta por llanuras lisas que pueden tener origen
+        criovolcánico. Como el resto de satélites regulares de Saturno, Tetis se formó a partir de
+        la subnebulosa saturniana: un disco de gas y polvo que rodeó al gigante anillado poco después
+        de su formación. Tetis ha sido visitado por varias sondas espaciales incluyendo a la Pioneer
+        11 en 1979, las Voyager en 1980 y 1981 y la Cassini, que lo ha sobrevolado varias veces desde 2004.</string>
+    <string name="dioneD">Dione es un satélite natural de Saturno descubierto en 1684 por Giovanni Cassini;
+        el nombre proviene de la mitología griega. Cassini nombró a las cuatro lunas descubiertas por
+        él (Tetis, Dione, Rea y Jápeto) Sidera Lodoicea («las estrellas de Luis») en honor al rey Luis XIV.
+        Los astrónomos de la época adoptaron la convención de nombrar a los satélites con números romanos,
+        y Dione también se conoce como Saturno IV. Los nombres mitológicos de los satélites de Saturno
+        fueron propuestos por John Herschel (hijo de William Herschel, descubridor de Mimas y Encélado)
+        en su estudio publicado en 1847, Results of Astronomical Observations made at the Cape of Good
+        Hope donde sugirió los nombres de los titanes, hermanos y hermanas de Cronos.</string>
+    <string name="reaD">Rea es un satélite del planeta Saturno. Con 1529 km de diámetro (aproximadamente 
+        la mitad que la Luna), es el segundo satélite más grande del planeta después de Titán, y seguido
+        de cerca por Jápeto. El satélite ocupa la decimocuarta posición en cercanía al planeta, orbitando
+        a una distancia de unos 527.000 km. Su órbita es casi circular y está ligeramente inclinada con
+        respecto al ecuador de Saturno, y el satélite tarda unos 4,5 días terrestres en completarla.
+        Se cree que Rea posee un núcleo rocoso que supone algo menos de una tercera parte del diámetro,
+        mientras que su manto y corteza podrían estar compuestos por agua helada e impurezas diversas.
+        El satélite fue descubierto en 1672 por el astrónomo italofrancés Giovanni Cassini, que le dio
+        el nombre de la figura mitológica griega Rea, hermana y esposa de Crono (Saturno en el panteón romano).
+        La luna fue fotografiada por la sonda estadounidense Voyager 1 en noviembre de 1980, cuando 
+        esta pasó por el sistema de Saturno, y posteriormente por la sonda Cassini, la cual la estudió
+        de cerca en noviembre de 2005, en marzo de 2010, y en enero de 2011.</string>
+    <string name="febeD">Febe es el satélite irregular más grande de Saturno. Fue descubierto por el
+        astrónomo estadounidense William Henry Pickering en 1898. Tiene un diámetro de 220 km.
+        Su distancia a Saturno es de 12 954 000 km y su masa es de 4,0e+18 kg. Posee una inclinación
+        de su órbita de 175,3º. Refleja solo el 6 % de la luz solar que recibe. Tarda nueve horas en
+        completar una rotación sobre su eje. Orbita alrededor de Saturno en unos 18 meses (550,4 días)
+        en dirección contraria a la de los demás satélites del planeta, en un plano más cercano al
+        eclíptico que el plano ecuatorial de Saturno.</string>
+    <string name="mirandaD">Miranda, también designado como Urano I, es el menor de los cinco satélites
+        principales del planeta Urano y el último en ser descubierto hasta el sobrevuelo de Urano por
+        la sonda espacial Voyager 2. Descubierto por Gerard Kuiper el 16 de febrero de 1948, Miranda
+        recibe su nombre de un personaje —la hija del mago Próspero— de la obra de William Shakespeare
+        La Tempestad.</string>
+    <string name="arielD">Ariel es el cuarto satélite más grande de Urano y el segundo en proximidad
+        de los satélites principales. Fue descubierto en 1851 por William Lassell y nombrado por un
+        personaje de dos diferentes obras de la literatura inglesa. Se conoce el 35 % de la superficie
+        del satélite por el sobrevuelo de la sonda Voyager 2 en 1986, el único acercamiento al sistema
+        uraniano hasta la fecha. Es el decimocuarto satélite en tamaño del sistema solar. Orbita en
+        el plano ecuatorial del planeta que, al ser perpendicular a la órbita de Urano alrededor del
+        Sol, hace que el satélite tenga un ciclo estacional extremo. Al igual que el resto de satélites
+        uranianos, se formó probablemente a partir del disco de acreción que rodeaba el planeta tras
+        su formación. Se cree que está compuesto por una mezcla equilibrada de rocas y hielos, y diferenciado
+        en un núcleo rocoso rodeado por un manto de hielo. Tiene una superficie compleja, constituida
+        por extensos terrenos craterizados y cortados por sistemas de escarpes, cañones y crestas.
+        Muestra signos de actividad geológica más reciente que en el resto de satélites, quizá producto
+        del calentamiento de marea.</string>
+    <string name="umbrielD">Umbriel es un satélite de Urano descubierto el 24 de octubre de 1851 por
+        William Lassell, al mismo tiempo que Ariel, y nombrado por un personaje del poema de Alexander
+        Pope El rizo robado. El nombre fue sugerido en 1852 por John Herschel, hijo del descubridor
+        de Urano William Herschel, a petición del propio Lassell. Está constituido principalmente por
+        hielo con una parte sustancial de roca y su interior puede estar diferenciado en un núcleo rocoso
+        y un manto de hielo. La superficie es la más oscura de los satélites principales de Urano
+        (con esto, su nombre recuerda a la palabra latina «umbra», sombra en español) y parece haber
+        sido esculpida básicamente por impactos. Sin embargo, la presencia de cañones sugiere que ha
+        sufrido tempranos procesos endógenos que provocaron el rejuvenecimiento superficial y borraron
+        los terrenos más antiguos. Cubierto por numerosos cráteres de impacto que llegan a alcanzar
+        los 210 km de diámetro, Umbriel es el segundo satélite de Urano más craterizado tras Oberón.
+        Su característica superficial más destacada es un anillo brillante en el fondo del cráter Wunda.
+        Al igual que el resto de satélites, se formó a partir del disco de acreción que rodeaba al
+        planeta poco después de su formación. La Voyager 2 es la única sonda que ha visitado el sistema
+        de Urano. En enero de 1986 tomó varias imágenes de Umbriel, lo que permitió cartografiar cerca
+        del 40 % de la superficie.</string>
+    <string name="titaniaD">Titania, también designado como Urano III, es el mayor de los satélites 
+        del planeta Urano y el octavo del sistema solar. Descubierto por William Herschel el 11 de 
+        enero de 1787, Titania recibe su nombre de un personaje, la reina de las Hadas, de la obra 
+        de William Shakespeare El sueño de una noche de verano. Su órbita está completamente dentro 
+        de la magnetosfera de Urano. Titania está compuesto de partes aproximadamente iguales de hielo
+        y roca que están probablemente diferenciados en un núcleo rocoso y un manto de hielo. Una capa
+        de agua líquida puede que esté presente en el límite entre el núcleo y el manto. La superficie
+        de Titania, que es oscura y de color ligeramente rojizo, parece que ha sido modelada tanto por
+        impactos como por procesos endógenos. Está cubierta por numerosos cráteres de impacto que llegan
+        a alcanzar diámetros de 326 km, pero está menos craterizada que el satélite más externo de Urano,
+        Oberón. Titania sufrió probablemente un remodelado superficial endógeno que eliminó una antigua 
+        superficie más craterizada. La superficie de Titania está atravesada por un sistema de enormes
+        cañones y escarpes resultado de una expansión en una fase temprana de su evolución. Como todos 
+        los satélites de Urano, Titania se formó probablemente a partir del disco de acreción que rodeaba 
+        Urano justo después de la formación del planeta. Estudios espectroscópicos realizados en la banda
+        del infrarrojo hechos entre 2001 y 2005 revelaron la presencia de hielo de agua y dióxido de
+        carbono en la superficie de Titania, lo que sugiere que es posible que posea una tenue atmósfera
+        de dióxido de carbono. Medidas realizadas durante una ocultación estelar de Titania establecieron
+        un límite superior a la presión atmosférica en la superficie de entre 10 y 20 nbar. El sistema 
+        de Urano ha sido estudiado de cerca una sola vez por la sonda espacial Voyager 2 en enero de 
+        1986. Se tomaron muchas fotografías de Titania que permitieron cartografíar el 40 % de su 
+        superficie.</string>
+    <string name="oberonD">Oberón o Urano IV es el más exterior de los satélites principales del
+        planeta Urano. Es el segundo más grande y más masivo y el noveno más masivo del sistema solar.
+        Descubierto por William Herschel el 11 de enero de 1787, Oberón recibe su nombre de un personaje,
+        el rey de las Hadas, de la obra de William Shakespeare El sueño de una noche de verano. Su órbita
+        está parcialmente fuera de la magnetosfera de Urano. Oberón está compuesto de partes aproximadamente
+        iguales de hielo y roca que están probablemente diferenciados en un núcleo rocoso y un manto de
+        hielo. Una capa de agua líquida puede que esté presente en el límite entre el núcleo y el manto.
+        La superficie de Oberón, que es oscura y de color ligeramente rojizo, parece que ha sido modelada
+        por el impacto de asteroides y cometas. Está cubierta por numerosos cráteres de impacto que
+        llegan a alcanzar un diámetro de 210 km. Oberón posee un sistema de cañones y escarpes formados
+        por la expansión de su interior en una fase temprana de su evolución. Este satélite se formó
+        probablemente a partir del disco de acreción que rodeaba Urano tras la formación del planeta.
+        Hasta el momento, el sistema de Urano ha sido estudiado de cerca una sola vez por la sonda espacial
+        Voyager 2 en enero de 1986. Se tomaron muchas fotografías de Oberón que permitieron cartografíar
+        el 40 % de su superficie.</string>
+    <string name="tritonD">Tritón es un satélite de Neptuno que se encuentra a 4500 millones de kilómetros
+        del Sol. Es uno de los astros más fríos del sistema solar (-235 °C). Descubierto por William Lassell
+        el 10 de octubre de 1846,solo 17 días después del propio descubrimiento del planeta, debe
+        su nombre al dios Tritón de la mitología griega. Con un diámetro de 2707 km, Tritón es el
+        satélite más grande de Neptuno y el séptimo del sistema solar, además de ser la única luna
+        de gran tamaño que posee una órbita retrógrada, es decir, una órbita cuya dirección es contraria
+        a la rotación del planeta (algo excepcional en un cuerpo de semejante tamaño). A causa de esta
+        órbita retrógrada y a su composición,similar a la de Plutón,se considera que Tritón
+        fue capturado del cinturón de Kuiper por la fuerza gravitacional de Neptuno. Tritón se compone
+        de una corteza de nitrógeno congelado sobre un manto de hielo, el cual se cree cubre un núcleo
+        sólido de roca y metal. Tritón tiene una densidad media de 2.061 g/cm³ y está compuesto por
+        aproximadamente un 15-35 % de agua helada. Tritón es de los pocos satélites del sistema
+        solar del que se conoce que es geológicamente activo. Debido a esta actividad, su superficie
+        es relativamente joven, y revela una compleja historia geológica a partir de misteriosos e
+        intrincados terrenos criovolcánicos y tectónicos. Tras el paso del Voyager 2 por sus cercanías,
+        unas enigmáticas imágenes revelaron lo que parecían ser géiseres de nitrógeno líquido emanados
+        desde su superficie helada. Este descubrimiento cambió el concepto clásico de vulcanismo ya que,
+        hasta entonces, se suponía que los cuerpos gélidos no deberían estar geológicamente activos.
+        Tritón demostró que para que haya actividad geológica basta que un medio fluido sea roca fundida,
+        nitrógeno o agua. Tritón posee una tenue atmósfera de nitrógeno cuya presión es inferior a 1/70000
+        con respecto a la presión de la atmósfera de la Tierra a nivel del mar. Debido a su cercanía
+        con Neptuno, es posible que se desintegre y termine cediendo a la fuerza de gravedad del planeta
+        para convertirse en un nuevo sistema anular más brillante que el de Saturno por medio del límite
+        de Roche.</string>
+    <string name="proteoD">Proteo es el segundo satélite más grande de Neptuno, detrás de Tritón. Fue
+        descubierto en 1989 por Stephen Synnott gracias a las imágenes tomadas por la sonda espacial
+        Voyager 2. Es uno de los cuerpos más oscuros del sistema solar ya que solo refleja el 6 % de
+        la luz solar que recibe, por lo que no ha podido ser descubierto antes del paso de la Voyager 2.
+        Lleva el nombre de Proteus, el dios marino cambia - forma de la mitología griega.</string>
+    <string name="nereidaD">Nereida (del griego, Νηρηΐδα) es un satélite natural de Neptuno, el tercero
+        en tamaño. Fue descubierto por Gerard Kuiper en 1949. Su órbita es muy elíptica, por lo que
+        podría tratarse de un objeto capturado. Apenas se conocen detalles de su superficie. En 1989,
+        cuando la sonda espacial Voyager 2 sobrevoló el sistema de Neptuno, pasó muy lejos de este 
+        satélite.</string>
+    <string name="larisaD">Larisa (del griego Λάρισσα), o Neptuno VII, es un pequeño satélite natural
+        del planeta Neptuno. Su nombre procede de Larisa, heroína argiva, hija de Pelasgo, amante de
+        Poseidón (Neptuno en la mitología romana).</string>
+    <string name="galateaD">Galatea es el cuarto satélite de Neptuno. Fue descubierto en julio de 1989
+        gracias a las imágenes tomadas por la nave espacial Voyager 2 y se le dio la designación temporal
+        de S/1989N4. También se le denomina Neptuno IV . El nombre se le fue dado el 16 de septiembre
+        de 1991, en honor a una de las cincuenta ninfas Nereidas, a quien el cíclope Polifemo la enamoró,
+        pero vanamente. Tiene forma irregular y no muestra ninguna señal de modificación geológica.
+        Su órbita cercana al planeta y por debajo del límite de Roche hace que su destino final sea
+        convertirse en un nuevo anillo planetario brillante despedazado por la fuerza de marea de Neptuno
+        o impactar contra el propio planeta matriz. Los efectos gravitatorios de Galatea, una luna que 
+        viaja por el interior de los anillos, se cree ahora, que es la de confinar los arcos de materia
+        de los anillos. El estrecho Anillo Adams está a 63.000 km del centro de Neptuno, mientras el 
+        satélite órbita a sólo 61.600 km. El Anillo de Leverrier está a 53.000 km y el Anillo de Galle,
+        más ancho y más débil, está a 42.000 km. Por tanto, el satélite tiene a estos dos últimos anillos
+        como interiores y al Anillo Adams como exterior. No debe confundirse con el asteroide (74) Galatea.</string>
+    <string name="despinaD">Despina o Neptuno V, es el tercer satélite de Neptuno más cercano a su superficie.
+        Su nombre homenajea a Despena, una ninfa hija de Poseidón. Fue descubierta a finales de julio de
+        1989 gracias a las imágenes tomadas por la sonda Voyager 2. Se le otorgó la denominación 
+        transitoria de S/1989 N 3. El hallazgo fue comunicado (IAUC 4824) el 2 de agosto de 1989,
+        pero el texto habla de "10 imágenes tomadas 5 días atrás", por lo que el descubrimiento habría
+        sido antes del 28 de julio. El satélite fue bautizado el 16 de septiembre de 1991. Despina 
+        posee una forma irregular y no muestra signos de actividad geológica. Se cree que se originó 
+        a raíz de fragmentos de los satélites primitivos de Neptuno que fueron perturbados con la 
+        captura de Tritón, cuya órbita inicial era sumamente excéntrica. Su órbita se encuentra cerca 
+        pero fuera de la órbita de Talasa y dentro del anillo de Le Verrier. Se encuentra bajo y su
+        órbita está describiendo una suave espiral debido a una desaceleración y podría llegar a 
+        impactar contra la atmósfera de Neptuno (como se cree lo harán Fobos y Deimos contra Marte)
+        o romperse y generar un nuevo anillo planetario brillante al pasar el Límite de Roche.</string>
+    <string name="talasaD">Talasa, también conocido como Neptuno IV (con designación temporal de
+        S/1989 N 5), es uno de los 14 satélites de Neptuno. Fue descubierta por la Voyager 2 en 1989,
+        junto con otros 4 satélites de las 12 restantes (Despina, Galatea, Náyade y Proteo). En la
+        mitología Griega Talasa era hija de Éter y Hemera. "Thalassa" es también "mar" en griego. La
+        órbita que traza Talasa, sigue la misma dirección que el movimiento de rotación del planeta.
+        Al igual que su satélite homólogo Náyade, está recibiendo una aceleración negativa, lo que 
+        puede llegar a producir un impacto contra la atmósfera de Neptuno, o un impacto contra sus anillos.
+        Talasa tiene forma irregular y alongada. Hasta el momento (2005), no se observa señal alguna
+        de cambios geológicos.</string>
+    <string name="nayadeD">Naiad o Náyade es una pequeña e irregular luna del planeta Neptuno también
+        conocida como Neptuno III y anteriormente designada como S/1989 N 6. Tiene aproximadamente
+        58 kilómetros de diámetro y es uno de los satélites más cercanos al gigante gaseoso, a tan
+        sólo 48.227 kilómetros de su centro, lo que provoca que la pequeña luna tenga una rápida
+        velocidad orbital alrededor de Neptuno: tan sólo emplea 0,3 días terrestres (7 horas y 6 minutos)
+        para dar una vuelta. Desde que está bajo una orbita síncrona, su orbita está en un proceso
+        de deceleración, que puede llegar a causar un posible impacto con la atmósfera de Neptuno o
+        estrellarse contra uno de sus anillos o incluso convertirse en un nuevo anillo planetario brillante.
+        Náyade fue descubierta por la sonda espacial Voyager 2 de la NASA en su paso por Neptuno en
+        1989. La composición de su superficie es de tierra rica en carbono y hielo.</string>
+    <string name="halimedeD">Halimede es un satélite irregular con movimiento retrógrado de Neptuno. Fue descubierto por Matthew J. Holman el 14
+        de agosto de 2002. Satélites irregulares de Neptuno. Halimede tiene la segunda mayor excéntricidad
+        Orbital y el tercer lugar en la inclinación n orbital alrededor de Neptuno. Esto se ilustra
+        en el diagrama en relación con los otros satélites irregulares del planeta. Los satélites por
+        encima del eje horizontal son retrógrados. Los segmentos amarillos se extienden desde el pericentro
+        al apocentro. Halimede tiene unos 62 km de diámetro y un albedo de 0,04. Y aparece gris ante
+        la luz visible. Dado el similar color del satélite al de la luna Nereida junto con una alta
+        probabilidad (41%) de colisión, se ha sugerido que el satélite podría ser un fragmento de Nereida.
+        Halimede, o Neptuno IX, al igual que muchos de los satélites exteriores de Neptuno, debe su
+        nombre a una de las Nereidas, hijas de Nereo y Doris. Antes del anuncio de su nombre el 3 de
+        febrero de 2007, Halimede era conocido por la designación provisional S/2002 N 1.</string>
+    <string name="ceresD">Ceres es un planeta enano y el objeto astronómico más grande del cinturón
+        de asteroides, región del sistema solar que se encuentra entre las órbitas de Marte y Júpiter;
+        su diámetro de aproximadamente 945 km lo convierte en el trigésimo tercer objeto conocido más
+        grande del sistema solar. Se estima que su masa es un tercio de la masa total del cinturón de
+        asteroides, siendo el único objeto de dicho cinturón que ha alcanzado el equilibrio hidrostático.
+        Visto desde la Tierra, su magnitud aparente oscila entre 6,7 y 9,3; por lo tanto, es demasiado
+        débil para ser observado a simple vista excepto en las oposiciones más favorables y bajo cielos
+        muy oscuros. Fue descubierto el 1 de enero de 1801 por Giuseppe Piazzi desde el Observatorio
+        de Palermo, Sicilia, (Italia) y recibe su nombre de Ceres, la diosa romana de la agricultura,
+        las cosechas y la fecundidad. Originalmente fue considerado un planeta, pero se catalogó
+        como asteroide en la década de 1850 cuando se empezaron a descubrir otros objetos en órbitas
+        similares. A comienzos del siglo XXI, tras la definición de «planeta», fue reclasificado en
+        planeta enano. El interior de Ceres podría estar diferenciado en un núcleo rocoso y un manto
+        de hielo, y existir un océano bajo la capa de hielo. La superficie está compuesta de una mezcla
+        de hielo de agua y diversos minerales hidratados como carbonatos y arcillas. En enero de 2014
+        se detectaron emisiones de vapor de agua de varias regiones de Ceres, un hecho imprevisto en
+        los grandes objetos del cinturón de asteroides y sello distintivo de los cometas. La sonda Dawn
+        de la NASA entró en órbita de Ceres el 6 de marzo de 2015. La toma de fotografías comenzó en
+        enero mientras la nave se aproximaba al planeta enano; obtuvo imágenes con una resolución nunca
+        antes alcanzada, en las que se mostraba una superficie craterizada. Dos manchas brillantes
+        (o características de alto albedo) distintas dentro de un cráter (diferentes de las manchas
+        brillantes observadas anteriormente por el Hubble) aparecieron en imágenes del 19 de febrero,
+        lo que llevó a especular con un posible origen criovolcánico o con una desgasificación. El 3
+        de marzo, un portavoz de la NASA dijo que las manchas eran compatibles con materiales altamente
+        reflectivos que contenían hielos o sales, pero que el criovulcanismo era improbable. El 11 de
+        mayo, la NASA publicó una fotografía en alta resolución que mostraba que había varias manchas
+        en lugar de una o dos. El 9 de diciembre, científicos de la NASA informaron que las manchas
+        brillantes podían estar relacionadas con sales, en particular con un tipo de salmuera que contiene
+        sulfato de magnesio hexahidratado (MgSO4·6H2O); las manchas también se encontraron asociadas con
+        arcillas ricas en amoniaco. En junio de 2016, datos espectrales del infrarrojo cercano de
+        estas áreas brillantes mostraron que eran compatibles con grandes cantidades de carbonato sódico
+        (Na2CO3), por lo que era probable que cierta actividad geológica reciente estuviese implicada
+        en la creación de las manchas blancas.</string>
+    <string name="palasD">Palas o Pallas es uno de los asteroides más grandes del sistema solar.
+        Su órbita está situada en la parte central del cinturón de asteroides, y tiene la particularidad
+        de ser algo inclinada y excéntrica para un objeto de su tamaño. La composición de Palas es única
+        pero bastante similar a la de los asteroides de tipo C. Palas fue el primer asteroide descubierto
+        tras Ceres. Fue encontrado por Heinrich Wilhelm Olbers el 28 de marzo de 1802, mientras realizaba
+        observaciones para localizar y determinar la órbita de Ceres, usando las predicciones del matemático
+        Carl Friedrich Gauss. Olbers lo bautizó en honor a Atenea, diosa griega de la sabiduría; un año
+        después, en 1803, el elemento químico paladio sería descubierto y nombrado así en referencia al
+        asteroide.</string>
+    <string name="vestaD">Vesta (en latín: Vesta) es el segundo objeto con más masa del cinturón de
+        asteroides y el tercero en tamaño, con un diámetro principal de unos 530 kilómetros y una masa
+        estimada del 9 % del cinturón de asteroides entero. Vesta perdió cerca del 1 % de su masa en
+        un impacto ocurrido hace poco menos de mil millones de años. Muchos fragmentos de este impacto
+        han chocado con la Tierra, constituyendo una fuente rica de información sobre el asteroide.
+        Vesta es el asteroide más brillante y el único en ocasiones visible a simple vista como un astro
+        de sexta magnitud. El punto más lejano en su órbita al Sol supera en no mucho al punto más cercano
+        al sol de la órbita de Ceres.</string>
+    <string name="hygieaD">Hygiea o Higía es un asteroide perteneciente al cinturón de asteroides que
+        orbita entre los planetas Marte y Júpiter, descubierto el 12 de abril de 1849 por el astrónomo
+        italiano Annibale de Gasparis (1819-1892) desde el observatorio de Capodimonte en Nápoles, Italia.
+        Está nombrado por Higía, una diosa de la mitología griega. El nombre fue sugerido por Ernesto
+        Capocci (1798-1864). Aunque añadieron a la denominación el adjetivo «Borbonica», en honor de
+        la casa real de Nápoles, no tardó en caer en desuso. Es el cuarto más grande, con un diámetro
+        medio de 400 km, y una masa estimada en el 3 % del total de la del cinturón de asteroides.
+        Sin embargo, fue el décimo en ser identificado porque su superficie oscura hace que el asteroide
+        sea menos visible de lo que le correspondería por su tamaño. De hecho, alcanza en promedio la
+        magnitud 10,2 en la oposición.</string>
+    <string name="junoD"> Juno (del latín: Iūno) fue el tercer asteroide en ser descubierto y es uno
+        de los más grandes del cinturón principal de asteroides, siendo el segundo más pesado dentro
+        de los de tipo S. Fue descubierto el 1 de septiembre de 1804 por el astrónomo alemán Karl Ludwig
+        Harding y bautizado con este nombre en honor a la diosa Juno desde el observatorio Schröter de
+        Lilienthal, Alemania.</string>
 </resources>

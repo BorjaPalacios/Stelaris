@@ -4,10 +4,12 @@ public class Luna {
 
     private String nombre;
     private String padre;
+    private String descripcion;
 
-    public Luna(String nombre, String padre) {
+    public Luna(String nombre, String padre, String descripcion) {
         this.nombre = nombre;
         this.padre = padre;
+        this.descripcion = descripcion;
     }
 
     public String getNombre() {
@@ -24,5 +26,13 @@ public class Luna {
 
     public void setPadre(String padre) {
         this.padre = padre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }

@@ -101,7 +101,7 @@ public class SignUpActivity extends AppCompatActivity {
                     ParseSign.parseEmail(this, this.email.getText().toString())) {
 
                 getCurrentFocus().clearFocus();
-                Snackbar.make(layout, getString(R.string.paciencia), Snackbar.LENGTH_LONG).show();
+                Snackbar.make(layout, getString(R.string.paciencia), Snackbar.LENGTH_INDEFINITE).show();
                 new getUsuarios().execute(url);
             }
         } catch (StringException e) {

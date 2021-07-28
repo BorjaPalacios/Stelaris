@@ -1,5 +1,6 @@
 package com.example.stelaris.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -27,7 +28,6 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     //TODO Facebook
-    //TODO perder focus
     private EditText username, password;
     private LinearLayout layout;
 
@@ -53,10 +53,14 @@ public class LoginActivity extends AppCompatActivity {
     public void login(View view) {
 
         String url = "https://stelariswebapi.azurewebsites.net/usuario";
+        if(getCurrentFocus() != null)
+            getCurrentFocus().clearFocus();
+        Snackbar.make(view,getString(R.string.logging), Snackbar.LENGTH_INDEFINITE).show();
         new getUsuarios().execute(url);
 
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class getUsuarios extends AsyncTask<String, Void, String> {
 
         private boolean encontrado = false;
