@@ -28,6 +28,7 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     //TODO Facebook
+    //TODO quitar foto default
     private EditText username, password;
     private LinearLayout layout;
 

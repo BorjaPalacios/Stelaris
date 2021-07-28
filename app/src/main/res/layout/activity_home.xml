@@ -17,47 +17,37 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:orientation="horizontal">
+                android:layout_height="300dp">
 
-                <TextView
-                    android:id="@+id/lblCeleste"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="TextView"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
-
-                <Button
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnMenu"
                     android:layout_width="48dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="right|top"
+                    android:layout_marginStart="388dp"
+                    android:layout_marginLeft="388dp"
+                    android:clickable="true"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
+                    android:src="@android:drawable/ic_menu_sort_by_size"
                     app:backgroundTint="#00FFFFFF"
                     app:elevation="0dp"
                     app:icon="@android:drawable/ic_menu_sort_by_size"
                     app:iconPadding="0dp"
                     app:iconTint="#090909"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/my_pager"
+                    app:layout_constraintStart_toStartOf="@+id/my_pager"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:rippleColor="#00FFFFFF" />
-            </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="300dp">
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/my_pager"
                     android:layout_width="0dp"
                     android:layout_height="245dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.tabs.TabLayout

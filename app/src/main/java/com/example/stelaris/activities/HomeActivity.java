@@ -34,6 +34,7 @@ import com.example.stelaris.clases.carousel.CarouselAdapter;
 import com.example.stelaris.clases.carousel.CarouselItem;
 import com.example.stelaris.dialogos.DialogoHijos;
 import com.example.stelaris.utils.Utils;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 import org.json.JSONException;
@@ -46,11 +47,13 @@ import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
     //TODO crear activity de ajustes?
-    private TextView celeste, descrpicion, planeta;
+    //TODO subasta?
+    //TODO chat?
+    private TextView  descrpicion, planeta;
     private List<CarouselItem> listItems;
     private ViewPager page;
     private TabLayout tabLayout;
-    private Button btnMenu;
+    private FloatingActionButton btnMenu;
     private ImageButton btnHijos, btnPadre;
     private LinearLayout layout;
     private Usuario usuario;
@@ -68,7 +71,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        this.celeste = findViewById(R.id.lblCeleste);
         this.descrpicion = findViewById(R.id.lblDescripcion);
         this.btnMenu = findViewById(R.id.btnMenu);
         this.layout = findViewById(R.id.home);

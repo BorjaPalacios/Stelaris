@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.stelaris.R;
 
 public class BbddManager extends SQLiteOpenHelper {
-    //TODO Falta el cinturon
-    //TODO descripcion de las lunas, nombre en ingles
     String sqlPlanetas = "CREATE TABLE IF NOT EXISTS Planetas (" +
             " nombre TEXT PRIMARY KEY," +
             " padre TEXT NOT NULL," +
