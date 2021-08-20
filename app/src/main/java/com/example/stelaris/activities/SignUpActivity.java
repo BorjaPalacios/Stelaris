@@ -51,9 +51,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class SignUpActivity extends AppCompatActivity {
-    //TODO previsualizacion de la foto?
     private EditText username, password, email;
+    private CircleImageView imageView;
     private byte[] image;
     private LinearLayout layout;
     ActivityResultLauncher<Intent> imageActivityResultLauncher, photoActivityResultLauncher;
@@ -72,6 +74,9 @@ public class SignUpActivity extends AppCompatActivity {
 
         this.password = findViewById(R.id.txtPasswordSign);
         this.password.setOnFocusChangeListener(listenerPassword());
+
+        this.imageView = findViewById(R.id.register_image);
+        this.imageView.setImageResource(R.drawable.fotodefault);
 
         imageActivityResultLauncher = imageHelper();
         photoActivityResultLauncher = photoHelper();
@@ -263,6 +268,8 @@ public class SignUpActivity extends AppCompatActivity {
                                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
                                 image = outputStream.toByteArray();
+                                imageView.setImageBitmap(BitmapFactory.decodeByteArray(image, 0,
+                                        image.length));
                             } catch (IOException e) {
 
                             }
@@ -286,6 +293,8 @@ public class SignUpActivity extends AppCompatActivity {
                             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
                             image = outputStream.toByteArray();
+                            imageView.setImageBitmap(BitmapFactory.decodeByteArray(image, 0,
+                                    image.length));
                         }
                     }
                 });

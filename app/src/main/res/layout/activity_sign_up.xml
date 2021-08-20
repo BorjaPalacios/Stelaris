@@ -165,6 +165,15 @@
                     app:cornerRadius="15dp" />
             </LinearLayout>
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/register_image"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
             <Button
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
