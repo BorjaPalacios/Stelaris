@@ -27,6 +27,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.stelaris.R;
 import com.example.stelaris.bbdd.Usuarios;
+import com.example.stelaris.clases.BasePlanet;
 import com.example.stelaris.clases.Usuario;
 import com.example.stelaris.exceptions.StringException;
 import com.example.stelaris.exceptions.UsuarioException;
@@ -51,6 +52,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignUpActivity extends AppCompatActivity {
+    //TODO previsualizacion de la foto?
     private EditText username, password, email;
     private byte[] image;
     private LinearLayout layout;
@@ -177,6 +179,8 @@ public class SignUpActivity extends AppCompatActivity {
                 return Utils.convertirInputToString(response.getEntity().getContent());
             } catch (IOException e) {
                 return "error";
+            } catch (Exception e) {
+                return "error";
             }
         }
 
@@ -187,6 +191,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             Intent i = new Intent(getBaseContext(), HomeActivity.class);
             i.putExtra("idUsuario", Integer.parseInt(result));
+            i.putExtra("location", BasePlanet.tierra);
             startActivity(i);
             finish();
         }

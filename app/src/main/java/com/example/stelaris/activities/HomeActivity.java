@@ -49,12 +49,11 @@ public class HomeActivity extends AppCompatActivity {
     //TODO crear activity de ajustes?
     //TODO subasta?
     //TODO chat?
-    private TextView  descrpicion, planeta;
+    private TextView descrpicion, planeta;
     private List<CarouselItem> listItems;
     private ViewPager page;
     private TabLayout tabLayout;
-    private FloatingActionButton btnMenu;
-    private ImageButton btnHijos, btnPadre;
+    private ImageButton btnHijos, btnPadre, btnMenu;
     private LinearLayout layout;
     private Usuario usuario;
     private String location;
@@ -139,9 +138,9 @@ public class HomeActivity extends AppCompatActivity {
                 if (result != null) {
                     JSONObject jsonObject = new JSONObject(result);
                     List<String> images = com.example.stelaris.bbdd.Nasa.convertirJsonNasa(jsonObject);
-                    for (String image : images) {
-                        carouselItemList.add(new CarouselItem(image));
-                    }
+                        for (String image : images) {
+                            carouselItemList.add(new CarouselItem(image));
+                        }
                     CarouselAdapter carouselAdapter = new CarouselAdapter(page.getContext(), carouselItemList);
                     page.setAdapter(carouselAdapter);
                     tabLayout.setupWithViewPager(page, true);

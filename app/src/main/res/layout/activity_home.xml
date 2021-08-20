@@ -17,54 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="300dp">
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnMenu"
-                    android:layout_width="48dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|top"
-                    android:layout_marginStart="388dp"
-                    android:layout_marginLeft="388dp"
-                    android:clickable="true"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:src="@android:drawable/ic_menu_sort_by_size"
-                    app:backgroundTint="#00FFFFFF"
-                    app:elevation="0dp"
-                    app:icon="@android:drawable/ic_menu_sort_by_size"
-                    app:iconPadding="0dp"
-                    app:iconTint="#090909"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/my_pager"
-                    app:layout_constraintStart_toStartOf="@+id/my_pager"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:rippleColor="#00FFFFFF" />
-
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/my_pager"
-                    android:layout_width="0dp"
-                    android:layout_height="245dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/my_tablayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="2dp"
-                    android:paddingEnd="2dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/my_pager"
-                    app:tabBackground="@drawable/indicator_selector"
-                    app:tabGravity="center"
-                    app:tabIndicatorHeight="0dp"
-                    tools:ignore="RtlCompat"></com.google.android.material.tabs.TabLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,22 +48,56 @@
                     android:background="#41DBEF"
                     android:onClick="irHijos"
                     app:srcCompat="@android:drawable/ic_media_ff" />
+
+                <ImageButton
+                    android:id="@+id/btnMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right|top"
+                    android:background="#FFFFFF"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@android:drawable/ic_menu_myplaces" />
             </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/my_pager"
+                    android:layout_width="0dp"
+                    android:layout_height="285dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/my_tablayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tabBackground="@drawable/indicator_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"
+                    tools:ignore="MissingConstraints,RtlCompat"></com.google.android.material.tabs.TabLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="250dp">
+                android:layout_height="300dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/lblDescripcion"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="10dp"
                         android:paddingLeft="30dp"
                         android:paddingRight="30dp"
                         android:text="TextView"
