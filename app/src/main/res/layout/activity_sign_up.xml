@@ -25,8 +25,8 @@
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/universo1"
                 android:contentDescription="@string/logo"
-                app:srcCompat="@drawable/finalfantasy"
-                tools:srcCompat="@drawable/finalfantasy" />
+                app:srcCompat="@drawable/logo"
+                tools:srcCompat="@drawable/logo" />
 
             <LinearLayout
                 android:layout_width="match_parent"

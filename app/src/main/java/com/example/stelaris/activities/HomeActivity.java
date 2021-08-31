@@ -46,9 +46,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
-    //TODO crear activity de ajustes?
-    //TODO subasta?
-    //TODO chat?
+
     private TextView descrpicion, planeta;
     private List<CarouselItem> listItems;
     private ViewPager page;
@@ -69,6 +67,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getSupportActionBar().hide();
 
         this.descrpicion = findViewById(R.id.lblDescripcion);
         this.btnMenu = findViewById(R.id.btnMenu);
@@ -95,6 +94,7 @@ public class HomeActivity extends AppCompatActivity {
         buscarPlaneta(planeta.getText().toString());
 
         conseguirUsuario(getIntent().getExtras().getInt("idUsuario"));
+
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -215,11 +215,15 @@ public class HomeActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.menuPerfil:
-                Intent i = new Intent(this, ProfileActivity.class);
-                i.putExtra("Usuario", usuario);
-                startActivity(i);
-                conseguirUsuario(usuario.getId());
-                break;
+                try {
+                    Intent i = new Intent(this, ProfileActivity.class);
+                    i.putExtra("Usuario", usuario);
+                    startActivity(i);
+                    conseguirUsuario(usuario.getId());
+                    break;
+                } catch (Exception e){
+                    System.out.println("error");
+                }
             case R.id.menuOpciones:
                 Toast toast = Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT);
                 toast.show();

@@ -28,21 +28,21 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     //TODO Facebook
-    //TODO quitar foto default
     private EditText username, password;
     private LinearLayout layout;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_login);
+            getSupportActionBar().hide();
 
-        BbddManager bbddManager = new BbddManager(this, "StelarisDb", null, 1);
+            BbddManager bbddManager = new BbddManager(this, "StelarisDb", null, 1);
 
-        this.username = findViewById(R.id.txtuserName);
-        this.password = findViewById(R.id.txtPassword);
-        this.layout = findViewById(R.id.loginLayout);
+            this.username = findViewById(R.id.txtuserName);
+            this.password = findViewById(R.id.txtPassword);
+            this.layout = findViewById(R.id.loginLayout);
     }
 
     public void sigin(View view) {
@@ -54,9 +54,9 @@ public class LoginActivity extends AppCompatActivity {
     public void login(View view) {
 
         String url = "https://stelariswebapi.azurewebsites.net/usuario";
-        if(getCurrentFocus() != null)
+        if (getCurrentFocus() != null)
             getCurrentFocus().clearFocus();
-        Snackbar.make(view,getString(R.string.logging), Snackbar.LENGTH_INDEFINITE).show();
+        Snackbar.make(view, getString(R.string.logging), Snackbar.LENGTH_INDEFINITE).show();
         new getUsuarios().execute(url);
 
     }

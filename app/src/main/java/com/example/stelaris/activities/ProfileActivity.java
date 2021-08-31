@@ -47,8 +47,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
-    //TODO Favoritos en funcion del spinner(ajustes activity)
-    //TODO Mover basplanet a qjustes
+
     private EditText username, email;
     private byte[] image;
     private CircleImageView profileImage;
@@ -57,25 +56,30 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        try{
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_profile);
+            getSupportActionBar().hide();
 
-        this.usuario = (Usuario) getIntent().getSerializableExtra("Usuario");
+            this.usuario = (Usuario) getIntent().getSerializableExtra("Usuario");
 
-        this.username = findViewById(R.id.txtProfileUserName);
-        this.username.setOnFocusChangeListener(listenerUsername());
-        this.username.setText(this.usuario.getUsername());
+            this.username = findViewById(R.id.txtProfileUserName);
+            this.username.setOnFocusChangeListener(listenerUsername());
+            this.username.setText(this.usuario.getUsername());
 
-        this.email = findViewById(R.id.txtProfileEmail);
-        this.email.setOnFocusChangeListener(listenerEmail());
-        this.email.setText(this.usuario.getEmail());
+            this.email = findViewById(R.id.txtProfileEmail);
+            this.email.setOnFocusChangeListener(listenerEmail());
+            this.email.setText(this.usuario.getEmail());
 
-        this.profileImage = findViewById(R.id.profile_image);
-        this.profileImage.setImageBitmap(BitmapFactory.decodeByteArray(this.usuario.getPhoto(), 0,
-                this.usuario.getPhoto().length));
+            this.profileImage = findViewById(R.id.profile_image);
+            this.profileImage.setImageBitmap(BitmapFactory.decodeByteArray(this.usuario.getPhoto(), 0,
+                    this.usuario.getPhoto().length));
 
-        imageActivityResultLauncherP = imageHelper();
-        photoActivityResultLauncherP = photoHelper();
+            imageActivityResultLauncherP = imageHelper();
+            photoActivityResultLauncherP = photoHelper();
+        } catch (Exception e){
+            System.out.println("error");
+        }
     }
 
     public void salvar(View view) throws StringException {
