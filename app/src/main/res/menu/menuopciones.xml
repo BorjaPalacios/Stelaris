@@ -5,9 +5,6 @@
         android:id="@+id/menuPerfil"
         android:title="@string/perfil" />
     <item
-        android:id="@+id/menuOpciones"
-        android:title="@string/ajustes" />
-    <item
         android:id="@+id/menuCerrarSesion"
         android:title="@string/cerrarSesion" />
 </menu>

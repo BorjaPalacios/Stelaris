@@ -224,10 +224,6 @@ public class HomeActivity extends AppCompatActivity {
                 } catch (Exception e){
                     System.out.println("error");
                 }
-            case R.id.menuOpciones:
-                Toast toast = Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT);
-                toast.show();
-                break;
             case R.id.menuCerrarSesion:
                 finish();
                 break;
